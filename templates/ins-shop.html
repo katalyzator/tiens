@@ -1,426 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Exotico</title>
-        <meta name="description" content="HTML framework description">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base.html' %}
 
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:400,500,600,700">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&amp;subset=latin,latin-ext,cyrillic-ext,cyrillic">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Fredoka+One">
-        <!-- end fonts -->
+{% load staticfiles %}
 
-        <link rel="stylesheet" href="css/general.css">
-        
-         <!-- End styles -->
 
-         <script src="js/libs/jquery-1.10.2.min.js"></script>
-         <script src="js/libs/jquery-ui.js"></script>
-         <!-- End jQuery -->
-        
-        <script type='text/javascript' src='js/libs/modernizr-2.5.3.min.js'></script>
-         <!-- End modernizr -->
+{% block content %}
 
-        <!-- Semantic HTML5 Support on old IE -->
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+    <div class="container container_pull-top">
+        <div class="ins-shop cf">
+            <div class="shop-item shop-item_big shop-item_ins cf">
+                <div class="shop-item__content">
+                    <h1 class="shop-item__title">orange</h1>
 
-        <!--[if gte IE 9]>
-            <style type="text/css">
-                .gradient {
-                    filter: none;
-                }
-            </style>
-        <![endif]-->
-    </head>
-    <!-- End head -->
+                    <p>In an ideal world this website wouldn't exist, a client would acknowledge the importance having
+                        web copy before the design starts.</p>
 
-    <body>
-        <header class="header">
-            <div class="container cf">
-                <a href="index.html" class="logo"><img src="css/images/logo.png" alt="Exotico"></a>
-                <a href="index.html" class="logo logo_second-type"><img src="css/images/logo-second-type.png" alt="Exotico"></a>
-                <!-- end logo -->
+                    <blockquote class="shop-item__quote">
+                        <p>Best treat when inviting friends or family!</p>
+                    </blockquote>
 
-                <div class="basket float-right">
-                    <a href="#" class="basket__link">Basket</a>
-                    <span class="basket__count">3</span>
-                    <div class="basket__price">$780</div>
+                    <div class="shop-item__price">$56<span>$75</span></div>
                 </div>
-                <!-- end basket -->
+                <!-- end shop item content -->
 
-                <nav class="wrap-nav">
-                    <ul class="nav">
-                        <li class="nav__item">
-                            <a href="index.html">Home</a>
-                        </li>
+                <div class="shop-item__thumb">
+                    <img src="http://placehold.it/304x263" alt="">
 
-                        <li class="nav__item">
-                            <a href="about.html">About</a>
-                        </li>
+                    <a href="#" class="buy-btn buy-btn_round"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item thumb -->
 
-                        <li class="nav__item">
-                            <a href="products.html">Products</a>
-
-                                <ul class="sub-nav">
-                                    <li class="sub-nav__item">
-                                        <a href="#">Fruits</a>
-                                    </li>
-
-                                    <li class="sub-nav__item">
-                                        <a href="#">Vegetables</a>
-                                    </li>
-
-                                    <li class="sub-nav__item sub-nav__item_active">
-                                        <a href="#">Berries</a>
-                                    </li>
-
-                                    <li class="sub-nav__item">
-                                        <a href="#">Other</a>
-                                    </li>
-                                </ul>
-                                <!-- end sub nav -->
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="blog.html">Blog</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="shop.html">Shop</a>
-                        </li>
-
-                        <li class="nav__item nav__item_active">
-                            <a href="gallery.html">Gallery</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="contacts.html">Contacts</a>
-                        </li>
-                    </ul>
-                    <!-- end nav -->
-
-                    <a href="#" class="nav-toggle-btn"><i class="nav-toggle-btn__icon"></i>Drop menu</a>
-                </nav>
-                <!-- end wrap nav -->
+                <div class="shop-item__details">
+                    <div class="amount">
+                        <input type="text" value="1" size="5" class="amount__field"/>
+                        <span class="amount__btn amount__btn_minus">-</span>
+                        <span class="amount__btn amount__btn_plus">+</span>
+                    </div>
+                    <!-- end amount -->
+                    <br>
+                    <a href="#" class="buy-btn buy-btn_round"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item detailed col -->
             </div>
-            <!-- end container -->
-        </header>
-         <!-- end header -->
+            <!-- end shop item big -->
 
-        <header class="heading">
-            <div class="container">
-                <h1 class="heading__title">Shop</h1>
+            <div class="wrap-slider">
+                <header class="slider-heading cf">
+                    <div class="slider-controls">
+                        <div class="slider-controls__prev"></div>
+                        <div class="slider-controls__next"></div>
+                    </div>
+                    <!-- end slider controls -->
 
-                <ul class="breadcrumb">
-                    <li class="breadcrumb__item">
-                        <a href="#" class="breadcrumb__link">Home</a>
+                    <h1 class="slider-heading__title">Similar products</h1>
+                </header>
+                <!-- end slider heading -->
+
+                <ul class="slider">
+                    <li class="slider__item">
+                        <div class="shop-item">
+                            <div class="shop-item__thumb">
+                                <img src="http://placehold.it/240x239" alt="">
+                            </div>
+                            <!-- end shop item thumb -->
+
+                            <div class="shop-item__content">
+                                <h1 class="shop-item__title">Title of the item for exemple</h1>
+                                <div class="shop-item__price">$3,200</div>
+                            </div>
+                            <!-- end shop item content -->
+
+                            <a href="#" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                        </div>
+                        <!-- end shop item -->
                     </li>
+                    <!-- end slider item -->
 
-                    <li class="breadcrumb__item breadcrumb__item_arrow">&rarr;</li>
+                    <li class="slider__item">
+                        <div class="shop-item">
+                            <div class="shop-item__thumb">
+                                <img src="http://placehold.it/240x239" alt="">
+                            </div>
+                            <!-- end shop item thumb -->
 
-                    <li class="breadcrumb__item">
+                            <div class="shop-item__content">
+                                <h1 class="shop-item__title">Title of the item for exemple</h1>
+                                <div class="shop-item__price">$3,200</div>
+                            </div>
+                            <!-- end shop item content -->
 
-                        <a href="#" class="breadcrumb__link">Shop</a>
+                            <a href="#" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                        </div>
+                        <!-- end shop item footer -->
                     </li>
+                    <!-- end slider item -->
 
-                    <li class="breadcrumb__item breadcrumb__item_arrow">&rarr;</li>
+                    <li class="slider__item">
+                        <div class="shop-item">
+                            <div class="shop-item__thumb">
+                                <img src="http://placehold.it/240x239" alt="">
+                            </div>
+                            <!-- end shop item thumb -->
 
-                    <li class="breadcrumb__item">Orange</li>
+                            <div class="shop-item__content">
+                                <h1 class="shop-item__title">Title of the item for exemple</h1>
+                                <div class="shop-item__price">$3,200</div>
+                            </div>
+                            <!-- end shop item content -->
+
+                            <a href="#" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                        </div>
+                        <!-- end shop item -->
+                    </li>
+                    <!-- end slider item -->
+
+                    <li class="slider__item">
+                        <div class="shop-item">
+                            <div class="shop-item__thumb">
+                                <img src="http://placehold.it/240x239" alt="">
+                            </div>
+                            <!-- end shop item thumb -->
+
+                            <div class="shop-item__content">
+                                <h1 class="shop-item__title">Title of the item for exemple</h1>
+                                <div class="shop-item__price">$3,200</div>
+                            </div>
+                            <!-- end shop item content -->
+
+                            <a href="#" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                        </div>
+                        <!-- end shop item -->
+                    </li>
+                    <!-- end slider item -->
                 </ul>
-                <!-- End breadcrumb -->
             </div>
-            <!-- End container -->
-        </header>
-        <!-- End heading -->
-
-        <div class="container container_pull-top">
-            <div class="ins-shop cf">
-                <div class="shop-item shop-item_big shop-item_ins cf">
-                    <div class="shop-item__content">
-                        <h1 class="shop-item__title">orange</h1>
-
-                        <p>In an ideal world this website wouldn't exist, a client would acknowledge the importance having web copy before the design starts.</p>
-
-                        <blockquote class="shop-item__quote">
-                            <p>Best treat when inviting friends or family!</p>
-                        </blockquote>
-
-                        <div class="shop-item__price">$56<span>$75</span></div>
-                    </div>
-                    <!-- end shop item content -->
-
-                    <div class="shop-item__thumb">
-                        <img src="http://placehold.it/304x263" alt="">
-
-                        <a href="#" class="buy-btn buy-btn_round"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item thumb -->
-
-                    <div class="shop-item__details">
-                        <div class="amount">
-                            <input type="text" value="1" size="5" class="amount__field"/>
-                            <span class="amount__btn amount__btn_minus">-</span>
-                            <span class="amount__btn amount__btn_plus">+</span>
-                        </div>
-                        <!-- end amount -->
-                        <br>
-                        <a href="#" class="buy-btn buy-btn_round"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item detailed col -->
-                </div>
-                <!-- end shop item big -->
-
-                <div class="wrap-slider">
-                    <header class="slider-heading cf">
-                        <div class="slider-controls">
-                            <div class="slider-controls__prev"></div>
-                            <div class="slider-controls__next"></div>
-                        </div>
-                        <!-- end slider controls -->
-
-                        <h1 class="slider-heading__title">Similar products</h1>
-                    </header>
-                    <!-- end slider heading -->
-
-                    <ul class="slider">
-                        <li class="slider__item">
-                            <div class="shop-item">
-                                <div class="shop-item__thumb">
-                                    <img src="http://placehold.it/240x239" alt="">
-                                </div>
-                                <!-- end shop item thumb -->
-                                
-                                <div class="shop-item__content">
-                                    <h1 class="shop-item__title">Title of the item for exemple</h1>
-                                    <div class="shop-item__price">$3,200</div>
-                                </div>
-                                <!-- end shop item content -->
-
-                                <a href="#" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                            </div>
-                            <!-- end shop item -->
-                        </li>   
-                        <!-- end slider item -->
-
-                        <li class="slider__item">
-                            <div class="shop-item">
-                                <div class="shop-item__thumb">
-                                    <img src="http://placehold.it/240x239" alt="">
-                                </div>
-                                <!-- end shop item thumb -->
-                                
-                                <div class="shop-item__content">
-                                    <h1 class="shop-item__title">Title of the item for exemple</h1>
-                                    <div class="shop-item__price">$3,200</div>
-                                </div>
-                                <!-- end shop item content -->
-
-                                <a href="#" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                            </div>
-                            <!-- end shop item footer -->
-                        </li>   
-                        <!-- end slider item -->
-
-                        <li class="slider__item">
-                            <div class="shop-item">
-                                <div class="shop-item__thumb">
-                                    <img src="http://placehold.it/240x239" alt="">
-                                </div>
-                                <!-- end shop item thumb -->
-                                
-                                <div class="shop-item__content">
-                                    <h1 class="shop-item__title">Title of the item for exemple</h1>
-                                    <div class="shop-item__price">$3,200</div>
-                                </div>
-                                <!-- end shop item content -->
-
-                                <a href="#" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                            </div>
-                            <!-- end shop item -->
-                        </li>   
-                        <!-- end slider item -->
-
-                        <li class="slider__item">
-                            <div class="shop-item">
-                                <div class="shop-item__thumb">
-                                    <img src="http://placehold.it/240x239" alt="">
-                                </div>
-                                <!-- end shop item thumb -->
-                                
-                                <div class="shop-item__content">
-                                    <h1 class="shop-item__title">Title of the item for exemple</h1>
-                                    <div class="shop-item__price">$3,200</div>
-                                </div>
-                                <!-- end shop item content -->
-
-                                <a href="#" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                            </div>
-                            <!-- end shop item -->
-                        </li>   
-                        <!-- end slider item -->
-                    </ul>
-                </div>
-                <!-- end similar products -->
-            </div>
-            <!-- End ins shop -->
+            <!-- end similar products -->
         </div>
-        <!-- End container -->
+        <!-- End ins shop -->
+    </div>
+    <!-- End container -->
 
-        <footer class="footer">
-            <div class="top-section">
-                <div class="container cf">
-                    <section class="footer-widget support">
-                        <h1 class="footer-widget__title">Support</h1>
-
-                        <ul class="footer-widget__list">
-                            <li class="footer-widget__item">
-                                <a href="#">Terms of Service</a>
-                            </li>
-
-                            <li class="footer-widget__item">
-                                <a href="#">Security</a>
-                            </li>
-
-                            <li class="footer-widget__item">
-                                <a href="#">Privacy Policy</a>
-                            </li>
-
-                            <li class="footer-widget__item">
-                                <a href="#">Sitemap</a>
-                            </li>
-                        </ul>
-                    </section>
-                    <!-- end footer widget -->
-
-                    <section class="footer-widget users">
-                        <h1 class="footer-widget__title">For users</h1>
-
-                        <ul class="footer-widget__list">
-                            <li class="footer-widget__item">
-                                <a href="#">The best solutions</a>
-                            </li>
-
-                            <li class="footer-widget__item">
-                                <a href="#">Special offers</a>
-                            </li>
-
-                            <li class="footer-widget__item">
-                                <a href="#">Quality control</a>
-                            </li>
-
-                            <li class="footer-widget__item">
-                                <a href="#">Services</a>
-                            </li>
-                        </ul>
-                    </section>
-                    <!-- end footer widget -->
-
-                    <section class="footer-widget contacts">
-                        <h1 class="footer-widget__title">Contacts</h1>
-
-                        <div class="footer-widget__contacts">
-                            <div class="footer-widget__phone">800<strong>234-67-89</strong></div>
-                            <div class="footer-widget__email">info@website.com</div>
-                            <div class="footer-widget__address"><span>Spain</span>, Madrid, 4753 Fourth St</div>
-                        </div>
-                    </section>
-                    <!-- end footer widget -->
-
-                    <section class="tweets">
-                        <h1 class="tweets__title">Latest tweets</h1>
-
-                        <div class="wrap-tweets-slider">
-                            <ul class="tweets-slider">
-                                <li class="tweets-slider__item">
-                                    <div class="tweet">
-                                        <p>The generated Lorem Ipsum is therefore always free from repetition, injected humour.</p>
-                                        <div class="tweet__footer">
-                                            <span class="tweet__author">@Exotico</span>
-                                            <span class="tweet__time">3 hours ago</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-                    <!-- end tweets -->
-                </div>
-                <!-- end container -->
-            </div>
-            <!-- end top section -->
-
-            <div class="bottom-section">
-                <div class="container cf">
-                    <div class="ins-top-section">
-                        <nav class="wrap-second-nav">
-                            <ul class="second-nav">
-                                <li class="second-nav__item">
-                                    <a href="index.html">Home</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                    <a href="about.html">About</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                    <a href="products.html">Products</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                    <a href="products.html">Products</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                    <a href="blog.html">Blog</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                    <a href="shop.html">Shop</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                    <a href="gallery.html">Gallery</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                   <a href="contacts.html">Contacts</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!-- end second nav -->
-                    </div>
-                    <!-- end ins top section -->
-
-                    <div class="ins-bottom-section">
-                        <div class="social">
-                            <a href="#" target="_blank" class="social__item social__item_flickr">Flickr</a>
-                            <a href="#" target="_blank" class="social__item social__item_twitter">Twitter</a>
-                            <a href="#" target="_blank" class="social__item social__item_facebook">Facebook</a>
-                            <a href="#" target="_blank" class="social__item social__item_pinterest">Pinterest</a>
-                        </div>
-                        <!-- End social -->
-
-                        <div class="copy">&copy; 2014  - All Rights Reserved </div>
-                        <!-- end copy -->
-                    </div>
-                    <!-- end ins bottom section -->
-                </div>
-                <!-- end container -->
-            </div>
-            <!-- end bottom-section -->
-        </footer>
-        <!-- end footer -->
-
-        <script src="js/libs/jquery.bxslider.min.js"></script>
-        <script src="js/libs/jquery.fitvids.js"></script>
-        <!-- End libs -->
-        
-        <script src="js/scripts.js"></script>
-        <!-- End custom -->
-    </body>
-    <!-- End body -->
-</html>
+{% endblock %}

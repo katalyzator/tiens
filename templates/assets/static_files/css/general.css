@@ -612,7 +612,7 @@ table tbody tr td:first-child {
 }
 /* end logo */
 .wrap-nav {
-  float: left;
+  /*float: left;*/
   width: 63.5416666667%;
   margin-left: 168px;
 }

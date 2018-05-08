@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main',
+    'carton',
 ]
 
 MIDDLEWARE = [
@@ -97,6 +99,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
+
+CART_PRODUCT_MODEL = 'main.models.Product'
+CART_TEMPLATE_TAG_NAME = 'get_basket'
 
 LANGUAGE_CODE = 'en-us'
 

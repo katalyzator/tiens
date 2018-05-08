@@ -1,655 +1,398 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Exotico</title>
-        <meta name="description" content="HTML framework description">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base.html' %}
 
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Quicksand:300,400,700">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:400,500,600,700">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic&amp;subset=latin,latin-ext,cyrillic-ext,cyrillic">
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Fredoka+One">
-        <!-- end fonts -->
+{% load staticfiles %}
 
-        <link rel="stylesheet" href="css/general.css">
-        <!-- end styles -->
+{% block content %}
 
-        <script src="js/libs/jquery-1.10.2.min.js"></script>
-        <script src="js/libs/jquery-ui.js"></script>
-        <!-- end jQuery -->
-        
-        <script type='text/javascript' src='js/libs/modernizr-2.5.3.min.js'></script>
-         <!-- end modernizr -->
+    <header class="heading">
+        <div class="container">
+            <h1 class="heading__title">Shop</h1>
 
-        <!-- Semantic HTML5 Support on old IE -->
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+            <ul class="breadcrumb">
+                <li class="breadcrumb__item">
+                    <a href="#" class="breadcrumb__link">Home</a>
+                </li>
 
-        <!--[if gte IE 9]>
-            <style type="text/css">
-                .gradient {
-                    filter: none;
-                }
-            </style>
-        <![endif]-->
-    </head>
-    <!-- end head -->
+                <li class="breadcrumb__item breadcrumb__item_arrow">&rarr;</li>
 
-    <body>
-        <header class="header">
-            <div class="container cf">
-                <a href="index.html" class="logo"><img src="css/images/logo.png" alt="Exotico"></a>
-                <a href="index.html" class="logo logo_second-type"><img src="css/images/logo-second-type.png" alt="Exotico"></a>
-                <!-- end logo -->
-
-                <div class="basket float-right">
-                    <a href="#" class="basket__link">Basket</a>
-                    <span class="basket__count">3</span>
-                    <div class="basket__price">$780</div>
-                </div>
-                <!-- end basket -->
-
-                <nav class="wrap-nav">
-                    <ul class="nav">
-                        <li class="nav__item">
-                            <a href="index.html">Home</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="about.html">About</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="products.html">Products</a>
-
-                                <ul class="sub-nav">
-                                    <li class="sub-nav__item">
-                                        <a href="#">Fruits</a>
-                                    </li>
-
-                                    <li class="sub-nav__item">
-                                        <a href="#">Vegetables</a>
-                                    </li>
-
-                                    <li class="sub-nav__item sub-nav__item_active">
-                                        <a href="#">Berries</a>
-                                    </li>
-
-                                    <li class="sub-nav__item">
-                                        <a href="#">Other</a>
-                                    </li>
-                                </ul>
-                                <!-- end sub nav -->
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="blog.html">Blog</a>
-                        </li>
-
-                        <li class="nav__item nav__item_active">
-                            <a href="shop.html">Shop</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="gallery.html">Gallery</a>
-                        </li>
-
-                        <li class="nav__item">
-                            <a href="contacts.html">Contacts</a>
-                        </li>
-                    </ul>
-                    <!-- end nav -->
-
-                    <a href="#" class="nav-toggle-btn"><i class="nav-toggle-btn__icon"></i>Drop menu</a>
-                </nav>
-                <!-- end wrap nav -->
-            </div>
-            <!-- end container -->
-        </header>
-         <!-- end header -->
-
-        <header class="heading">
-            <div class="container">
-                <h1 class="heading__title">Shop</h1>
-
-                <ul class="breadcrumb">
-                    <li class="breadcrumb__item">
-                        <a href="#" class="breadcrumb__link">Home</a>
-                    </li>
-
-                    <li class="breadcrumb__item breadcrumb__item_arrow">&rarr;</li>
-
-                    <li class="breadcrumb__item">Shop</li>
-                </ul>
-                <!-- end breadcrumb -->
-            </div>
-            <!-- end container -->
-        </header>
-        <!-- end heading -->
-
-        <div class="container container_pull-top no-padding">
-            <div class="shop">
-                <div class="shop-filters cf">
-                    <div class="shop-filter shop-filter_range">
-                        <div class="price-range">
-                            <label class="price-range__label">Price:</label>
-
-                            <div class="price-range__container">
-                                <input type="text" class="price-range__amount price-range__amount_first-price">
-                                <div class="price-range__scale"></div>
-                                <input type="text" class="price-range__amount price-range__amount_last-price">
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end shop filter -->
-
-                    <div class="shop-filter select-filter">
-                        <label class="select-filter__label">Sort by:</label>
-
-                        <select class="dropdown ">
-                            <option value="1">Category</option>
-                            <option value="2">Price</option>
-                            <option value="3">Colour</option>
-                            <option value="4">Taste</option>
-                            <option value="4">Weight</option>
-                            <option value="4">Seasons</option>
-                        </select>
-                    </div>
-                    <!-- end shop filter -->
-
-                    <div class="shop-filter select-filter">
-                        <label class="select-filter__label">Company:</label>
-
-                        <select class="dropdown ">
-                            <option value="1">Dropdown 1</option>
-                            <option value="2">Dropdown 2</option>
-                            <option value="3">Dropdown 3</option>
-                        </select>
-                    </div>
-                    <!-- end shop filter -->
-
-                    <a href="#" class="btn btn_shop-filter">Filter &#8250;</a>
-                </div>
-                <!-- end shop filters -->
-
-                <div class="shop-items cf">
-                    <div class="grid-sizer"></div>
-
-                    <div class="shop-item">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/240x250" alt="">
-                        </div>
-                        <!-- end shop item thumb -->
-                        
-                        <div class="shop-item__content">
-                            <h1 class="shop-item__title">Title of the item for exemple</h1>
-                            <div class="shop-item__price">$12</div>
-                        </div>
-                        <!-- end shop item content -->
-
-                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item -->
-
-                    <div class="shop-item">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/240x250" alt="">
-                        </div>
-                        <!-- end shop item thumb -->
-                        
-                        <div class="shop-item__content">
-                            <h1 class="shop-item__title">Title of the item for exemple</h1>
-                            <div class="shop-item__price">$12<span>12</span></div>
-                        </div>
-                        <!-- end shop item content -->
-
-                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item -->
-
-                    <div class="shop-item">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/240x250" alt="">
-                        </div>
-                        <!-- end shop item thumb -->
-                        
-                        <div class="shop-item__content">
-                            <h1 class="shop-item__title">Title of the item for exemple</h1>
-                            <div class="shop-item__price">$12</div>
-                        </div>
-                        <!-- end shop item content -->
-
-                       <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item -->
-
-                    <div class="shop-item">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/240x250" alt="">
-                        </div>
-                        <!-- end shop item thumb -->
-                        
-                        <div class="shop-item__content">
-                            <h1 class="shop-item__title">Title of the item for exemple</h1>
-                            <div class="shop-item__price">$12</div>
-                        </div>
-                        <!-- end shop item content -->
-
-                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item -->
-
-                    <div class="shop-item shop-item_big cf">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/220x348" alt="">
-
-                            <a href="ins-shop.html" class="buy-btn buy-btn_round"><i class="buy-btn__icon"></i>Buy</a>
-                        </div>
-                        <!-- end shop item thumb -->
-
-                        <div class="shop-item__wrap">
-                            <div class="shop-item__content">
-                                <h1 class="shop-item__title">orange</h1>
-
-                                <p>In an ideal world this website wouldn't exist, a client would acknowledge the importance having web copy before the design starts.</p>
-
-                                <blockquote class="shop-item__quote">
-                                    <p>Best treat when inviting friends or family!</p>
-                                </blockquote>
-
-                                <div class="shop-item__price">$56<span>$75</span></div>
-                            </div>
-                            <!-- end shop item content -->
-                        </div>
-                        <!-- end shop wrap -->
-                    </div>
-                    <!-- end shop item big -->
-
-                    <div class="shop-item">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/240x250" alt="">
-                        </div>
-                        <!-- end shop item thumb -->
-                        
-                        <div class="shop-item__content">
-                            <h1 class="shop-item__title">Title of the item for exemple</h1>
-                            <div class="shop-item__price">$12</div>
-                        </div>
-                        <!-- end shop item content -->
-
-                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item -->
-
-                    <div class="shop-item">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/240x250" alt="">
-                        </div>
-                        <!-- end shop item thumb -->
-                        
-                        <div class="shop-item__content">
-                            <h1 class="shop-item__title">Title of the item for exemple</h1>
-                            <div class="shop-item__price">$12</div>
-                        </div>
-                        <!-- end shop item content -->
-
-                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item -->
-
-                    <div class="shop-item">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/240x250" alt="">
-                        </div>
-                        <!-- end shop item thumb -->
-                        
-                        <div class="shop-item__content">
-                            <h1 class="shop-item__title">Title of the item for exemple</h1>
-                            <div class="shop-item__price">$12</div>
-                        </div>
-                        <!-- end shop item content -->
-
-                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item -->
-
-                    <div class="shop-item">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/240x250" alt="">
-                        </div>
-                        <!-- end shop item thumb -->
-                        
-                        <div class="shop-item__content">
-                            <h1 class="shop-item__title">Title of the item for exemple</h1>
-                            <div class="shop-item__price">$12</div>
-                        </div>
-                        <!-- end shop item content -->
-
-                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item -->
-
-                    <div class="shop-item shop-item_big cf">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/220x348" alt="">
-
-                            <a href="#" class="buy-btn buy-btn_round"><i class="buy-btn__icon"></i>Buy</a>
-                        </div>
-                        <!-- end shop item thumb -->
-
-                        <div class="shop-item__wrap">
-                            <div class="shop-item__content">
-                                <h1 class="shop-item__title">peach</h1>
-
-                                <p>In an ideal world this website wouldn't exist, a client would acknowledge the importance having web copy before the design starts.</p>
-
-                                <blockquote class="shop-item__quote">
-                                    <p>Best treat when inviting friends or family!</p>
-                                </blockquote>
-
-                                <div class="shop-item__price">$56<span>$75</span></div>
-                            </div>
-                            <!-- end shop item content -->
-                        </div>
-                        <!-- end shop wrap -->
-                    </div>
-                    <!-- end shop item big -->
-
-                    <div class="shop-item">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/240x250" alt="">
-                        </div>
-                        <!-- end shop item thumb -->
-                        
-                        <div class="shop-item__content">
-                            <h1 class="shop-item__title">Title of the item for exemple</h1>
-                            <div class="shop-item__price">$12</div>
-                        </div>
-                        <!-- end shop item content -->
-
-                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item -->
-
-                    <div class="shop-item">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/240x250" alt="">
-                        </div>
-                        <!-- end shop item thumb -->
-                        
-                        <div class="shop-item__content">
-                            <h1 class="shop-item__title">Title of the item for exemple</h1>
-                            <div class="shop-item__price">$12</div>
-                        </div>
-                        <!-- end shop item content -->
-
-                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item -->
-
-                    <div class="shop-item">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/240x250" alt="">
-                        </div>
-                        <!-- end shop item thumb -->
-                        
-                        <div class="shop-item__content">
-                            <h1 class="shop-item__title">Title of the item for exemple</h1>
-                            <div class="shop-item__price">$12</div>
-                        </div>
-                        <!-- end shop item content -->
-
-                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item -->
-
-                    <div class="shop-item">
-                        <div class="shop-item__thumb">
-                            <img src="http://placehold.it/240x250" alt="">
-                        </div>
-                        <!-- end shop item thumb -->
-                        
-                        <div class="shop-item__content">
-                            <h1 class="shop-item__title">Title of the item for exemple</h1>
-                            <div class="shop-item__price">$12</div>
-                        </div>
-                        <!-- end shop item content -->
-
-                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-                    </div>
-                    <!-- end shop item -->
-                </div>
-                <!-- end shop items -->
-
-                <nav class="wrap-pagination">
-
-                    <div class="pagination__side pagination__side_prev">
-                        <a href="#">Prev</a>
-                    </div>
-
-                    <div class="pagination__side pagination__side_next">
-                        <a href="#">Next</a>
-                    </div>
-
-                    <ol class="pagination">
-                        <li class="pagination__item">
-                            <a href="#">1</a>
-                        </li>
-
-                        <li class="pagination__item pagination__item_active">
-                            <a href="#">2</a>
-                        </li>
-
-                        <li class="pagination__item">
-                            <a href="#">3</a>
-                        </li>
-
-                        <li class="pagination__item">
-                            <a href="#">4</a>
-                        </li>
-
-                        <li class="pagination__item">
-                            <a href="#">5</a>
-                        </li>
-
-                        <li class="pagination__item">...</li>
-
-                        <li class="pagination__item">
-                            <a href="#">124</a>
-                        </li>
-                    </ol>
-                </nav>
-                <!-- end pagination -->
-            </div>
-            <!-- end shop -->
+                <li class="breadcrumb__item">Shop</li>
+            </ul>
+            <!-- end breadcrumb -->
         </div>
         <!-- end container -->
+    </header>
+    <!-- end heading -->
 
-        <footer class="footer">
-            <div class="top-section">
-                <div class="container cf">
-                    <section class="footer-widget support">
-                        <h1 class="footer-widget__title">Support</h1>
+    <div class="container container_pull-top no-padding">
+        <div class="shop">
+            <div class="shop-filters cf">
+                <div class="shop-filter shop-filter_range">
+                    <div class="price-range">
+                        <label class="price-range__label">Price:</label>
 
-                        <ul class="footer-widget__list">
-                            <li class="footer-widget__item">
-                                <a href="#">Terms of Service</a>
-                            </li>
-
-                            <li class="footer-widget__item">
-                                <a href="#">Security</a>
-                            </li>
-
-                            <li class="footer-widget__item">
-                                <a href="#">Privacy Policy</a>
-                            </li>
-
-                            <li class="footer-widget__item">
-                                <a href="#">Sitemap</a>
-                            </li>
-                        </ul>
-                    </section>
-                    <!-- end footer widget -->
-
-                    <section class="footer-widget users">
-                        <h1 class="footer-widget__title">For users</h1>
-
-                        <ul class="footer-widget__list">
-                            <li class="footer-widget__item">
-                                <a href="#">The best solutions</a>
-                            </li>
-
-                            <li class="footer-widget__item">
-                                <a href="#">Special offers</a>
-                            </li>
-
-                            <li class="footer-widget__item">
-                                <a href="#">Quality control</a>
-                            </li>
-
-                            <li class="footer-widget__item">
-                                <a href="#">Services</a>
-                            </li>
-                        </ul>
-                    </section>
-                    <!-- end footer widget -->
-
-                    <section class="footer-widget contacts">
-                        <h1 class="footer-widget__title">Contacts</h1>
-
-                        <div class="footer-widget__contacts">
-                            <div class="footer-widget__phone">800<strong>234-67-89</strong></div>
-                            <div class="footer-widget__email">info@website.com</div>
-                            <div class="footer-widget__address"><span>Spain</span>, Madrid, 4753 Fourth St</div>
+                        <div class="price-range__container">
+                            <input type="text" class="price-range__amount price-range__amount_first-price">
+                            <div class="price-range__scale"></div>
+                            <input type="text" class="price-range__amount price-range__amount_last-price">
                         </div>
-                    </section>
-                    <!-- end footer widget -->
-
-                    <section class="tweets">
-                        <h1 class="tweets__title">Latest tweets</h1>
-
-                        <div class="wrap-tweets-slider">
-                            <ul class="tweets-slider">
-                                <li class="tweets-slider__item">
-                                    <div class="tweet">
-                                        <p>The generated Lorem Ipsum is therefore always free from repetition, injected humour.</p>
-                                        <div class="tweet__footer">
-                                            <span class="tweet__author">@Exotico</span>
-                                            <span class="tweet__time">3 hours ago</span>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
-                    <!-- end tweets -->
-                </div>
-                <!-- end container -->
-            </div>
-            <!-- end top section -->
-
-            <div class="bottom-section">
-                <div class="container cf">
-                    <div class="ins-top-section">
-                        <nav class="wrap-second-nav">
-                            <ul class="second-nav">
-                                <li class="second-nav__item">
-                                    <a href="index.html">Home</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                    <a href="about.html">About</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                    <a href="products.html">Products</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                    <a href="products.html">Products</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                    <a href="blog.html">Blog</a>
-                                </li>
-
-                                <li class="second-nav__item second-nav__item_active">
-                                    <a href="shop.html">Shop</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                    <a href="gallery.html">Gallery</a>
-                                </li>
-
-                                <li class="second-nav__item">
-                                   <a href="contacts.html">Contacts</a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <!-- end second nav -->
                     </div>
-                    <!-- end ins top section -->
-
-                    <div class="ins-bottom-section">
-                        <div class="social">
-                            <a href="#" target="_blank" class="social__item social__item_flickr">Flickr</a>
-                            <a href="#" target="_blank" class="social__item social__item_twitter">Twitter</a>
-                            <a href="#" target="_blank" class="social__item social__item_facebook">Facebook</a>
-                            <a href="#" target="_blank" class="social__item social__item_pinterest">Pinterest</a>
-                        </div>
-                        <!-- End social -->
-
-                        <div class="copy">&copy; 2014  - All Rights Reserved </div>
-                        <!-- end copy -->
-                    </div>
-                    <!-- end ins bottom section -->
                 </div>
-                <!-- end container -->
+                <!-- end shop filter -->
+
+                <div class="shop-filter select-filter">
+                    <label class="select-filter__label">Sort by:</label>
+
+                    <select class="dropdown ">
+                        <option value="1">Category</option>
+                        <option value="2">Price</option>
+                        <option value="3">Colour</option>
+                        <option value="4">Taste</option>
+                        <option value="4">Weight</option>
+                        <option value="4">Seasons</option>
+                    </select>
+                </div>
+                <!-- end shop filter -->
+
+                <div class="shop-filter select-filter">
+                    <label class="select-filter__label">Company:</label>
+
+                    <select class="dropdown ">
+                        <option value="1">Dropdown 1</option>
+                        <option value="2">Dropdown 2</option>
+                        <option value="3">Dropdown 3</option>
+                    </select>
+                </div>
+                <!-- end shop filter -->
+
+                <a href="#" class="btn btn_shop-filter">Filter &#8250;</a>
             </div>
-            <!-- end bottom-section -->
-        </footer>
-        <!-- end footer -->
+            <!-- end shop filters -->
 
-        <script src="js/libs/jquery.bxslider.min.js"></script>
-        <script src="js/libs/jquery.fitvids.js"></script>
-        <script src="js/libs/jquery.easydropdown.min.js"></script>
-        <script src="js/libs/isotope.pkgd.min.js"></script>
-        <!-- end libs -->
+            <div class="shop-items cf">
+                <div class="grid-sizer"></div>
 
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/240x250" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
 
-        <script>
-            jQuery(function($) {
-                $(window).load(function(){
-                    $( ".price-range__scale" ).slider({
-                        range: true,
-                        min: 0,
-                        max: 500,
-                        values: [ 75, 300 ],
-                        slide: function( event, ui ) {
-                            $( ".price-range__amount_first-price" ).val( "$" + ui.values[ 0 ]);
-                            $( ".price-range__amount_last-price" ).val( "$" + ui.values[ 1 ]);
-                        }
-                    });
-                    $( ".price-range__amount_first-price" ).val( "$" + $( ".price-range__scale" ).slider( "values", 0 ));
-                    $( ".price-range__amount_last-price" ).val( "$" + $( ".price-range__scale" ).slider( "values", 1 ));
-                    /* end slider range */
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">Title of the item for exemple</h1>
+                        <div class="shop-item__price">$12</div>
+                    </div>
+                    <!-- end shop item content -->
 
+                    <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item -->
 
-                    var $container = $(".shop-items");
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/240x250" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
 
-                    $container.masonry({
-                        columnWidth:".grid-sizer",
-                        itemSelector: ".shop-item"
-                    });
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">Title of the item for exemple</h1>
+                        <div class="shop-item__price">$12<span>12</span></div>
+                    </div>
+                    <!-- end shop item content -->
+
+                    <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item -->
+
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/240x250" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
+
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">Title of the item for exemple</h1>
+                        <div class="shop-item__price">$12</div>
+                    </div>
+                    <!-- end shop item content -->
+
+                    <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item -->
+
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/240x250" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
+
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">Title of the item for exemple</h1>
+                        <div class="shop-item__price">$12</div>
+                    </div>
+                    <!-- end shop item content -->
+
+                    <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item -->
+
+                <div class="shop-item shop-item_big cf">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/220x348" alt="">
+
+                        <a href="ins-shop.html" class="buy-btn buy-btn_round"><i class="buy-btn__icon"></i>Buy</a>
+                    </div>
+                    <!-- end shop item thumb -->
+
+                    <div class="shop-item__wrap">
+                        <div class="shop-item__content">
+                            <h1 class="shop-item__title">orange</h1>
+
+                            <p>In an ideal world this website wouldn't exist, a client would acknowledge the importance
+                                having web copy before the design starts.</p>
+
+                            <blockquote class="shop-item__quote">
+                                <p>Best treat when inviting friends or family!</p>
+                            </blockquote>
+
+                            <div class="shop-item__price">$56<span>$75</span></div>
+                        </div>
+                        <!-- end shop item content -->
+                    </div>
+                    <!-- end shop wrap -->
+                </div>
+                <!-- end shop item big -->
+
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/240x250" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
+
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">Title of the item for exemple</h1>
+                        <div class="shop-item__price">$12</div>
+                    </div>
+                    <!-- end shop item content -->
+
+                    <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item -->
+
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/240x250" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
+
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">Title of the item for exemple</h1>
+                        <div class="shop-item__price">$12</div>
+                    </div>
+                    <!-- end shop item content -->
+
+                    <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item -->
+
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/240x250" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
+
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">Title of the item for exemple</h1>
+                        <div class="shop-item__price">$12</div>
+                    </div>
+                    <!-- end shop item content -->
+
+                    <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item -->
+
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/240x250" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
+
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">Title of the item for exemple</h1>
+                        <div class="shop-item__price">$12</div>
+                    </div>
+                    <!-- end shop item content -->
+
+                    <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item -->
+
+                <div class="shop-item shop-item_big cf">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/220x348" alt="">
+
+                        <a href="#" class="buy-btn buy-btn_round"><i class="buy-btn__icon"></i>Buy</a>
+                    </div>
+                    <!-- end shop item thumb -->
+
+                    <div class="shop-item__wrap">
+                        <div class="shop-item__content">
+                            <h1 class="shop-item__title">peach</h1>
+
+                            <p>In an ideal world this website wouldn't exist, a client would acknowledge the importance
+                                having web copy before the design starts.</p>
+
+                            <blockquote class="shop-item__quote">
+                                <p>Best treat when inviting friends or family!</p>
+                            </blockquote>
+
+                            <div class="shop-item__price">$56<span>$75</span></div>
+                        </div>
+                        <!-- end shop item content -->
+                    </div>
+                    <!-- end shop wrap -->
+                </div>
+                <!-- end shop item big -->
+
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/240x250" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
+
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">Title of the item for exemple</h1>
+                        <div class="shop-item__price">$12</div>
+                    </div>
+                    <!-- end shop item content -->
+
+                    <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item -->
+
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/240x250" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
+
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">Title of the item for exemple</h1>
+                        <div class="shop-item__price">$12</div>
+                    </div>
+                    <!-- end shop item content -->
+
+                    <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item -->
+
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/240x250" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
+
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">Title of the item for exemple</h1>
+                        <div class="shop-item__price">$12</div>
+                    </div>
+                    <!-- end shop item content -->
+
+                    <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item -->
+
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="http://placehold.it/240x250" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
+
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">Title of the item for exemple</h1>
+                        <div class="shop-item__price">$12</div>
+                    </div>
+                    <!-- end shop item content -->
+
+                    <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                </div>
+                <!-- end shop item -->
+            </div>
+            <!-- end shop items -->
+
+            <nav class="wrap-pagination">
+
+                <div class="pagination__side pagination__side_prev">
+                    <a href="#">Prev</a>
+                </div>
+
+                <div class="pagination__side pagination__side_next">
+                    <a href="#">Next</a>
+                </div>
+
+                <ol class="pagination">
+                    <li class="pagination__item">
+                        <a href="#">1</a>
+                    </li>
+
+                    <li class="pagination__item pagination__item_active">
+                        <a href="#">2</a>
+                    </li>
+
+                    <li class="pagination__item">
+                        <a href="#">3</a>
+                    </li>
+
+                    <li class="pagination__item">
+                        <a href="#">4</a>
+                    </li>
+
+                    <li class="pagination__item">
+                        <a href="#">5</a>
+                    </li>
+
+                    <li class="pagination__item">...</li>
+
+                    <li class="pagination__item">
+                        <a href="#">124</a>
+                    </li>
+                </ol>
+            </nav>
+            <!-- end pagination -->
+        </div>
+        <!-- end shop -->
+    </div>
+    <!-- end container -->
+{% endblock %}
+{% block custom_scripts %}
+    <script>
+        jQuery(function ($) {
+            $(window).load(function () {
+                $(".price-range__scale").slider({
+                    range: true,
+                    min: 0,
+                    max: 500,
+                    values: [75, 300],
+                    slide: function (event, ui) {
+                        $(".price-range__amount_first-price").val("$" + ui.values[0]);
+                        $(".price-range__amount_last-price").val("$" + ui.values[1]);
+                    }
                 });
-                /* end masonry */
+                $(".price-range__amount_first-price").val("$" + $(".price-range__scale").slider("values", 0));
+                $(".price-range__amount_last-price").val("$" + $(".price-range__scale").slider("values", 1));
+                /* end slider range */
+
+
+                var $container = $(".shop-items");
+
+                $container.masonry({
+                    columnWidth: ".grid-sizer",
+                    itemSelector: ".shop-item"
+                });
             });
-        </script>
-        
-        <script src="js/scripts.js"></script>
-        <!-- end custom -->
-    </body>
-    <!-- end body -->
-</html>
+            /* end masonry */
+        });
+    </script>
+
+{% endblock %}
+
+

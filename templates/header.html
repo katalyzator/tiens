@@ -1,0 +1,80 @@
+{% load staticfiles %}
+
+
+<header class="header" style="position: fixed;width: 100%;top: 0;z-index: 1;">
+    <div class="container cf">
+        <a href="index.html" class="logo"><img src="{% static 'css/images/logo.png' %}" alt="Tiens"></a>
+        <a href="index.html" class="logo logo_second-type"><img src="{% static 'css/images/logo-second-type.png' %}"
+                                                                alt="Tiens"></a>
+        <!-- end logo -->
+
+        <div class="basket float-right">
+            {% load carton_tags %}
+            {% get_basket as cart %}
+
+
+            <a href="{% url 'cart_view' %}" class="basket__link">Корзина</a>
+            <span class="basket__count">{{ cart.count }}</span>
+            <div class="basket__price">{{ cart.total }} сом</div>
+
+        </div>
+        <!-- end basket -->
+
+        <nav class="wrap-nav">
+            <ul class="nav">
+                <li class="nav__item">
+                    <a href="{% url 'index_view' %}">Главная</a>
+                </li>
+
+                {#                <li class="nav__item">#}
+                {#                    <a href="about.html">About</a>#}
+                {#                </li>#}
+                {##}
+                {#                <li class="nav__item">#}
+                {#                    <a href="products.html">Products</a>#}
+                {##}
+                {#                    <ul class="sub-nav">#}
+                {#                        <li class="sub-nav__item">#}
+                {#                            <a href="#">Fruits</a>#}
+                {#                        </li>#}
+                {##}
+                {#                        <li class="sub-nav__item">#}
+                {#                            <a href="#">Vegetables</a>#}
+                {#                        </li>#}
+                {##}
+                {#                        <li class="sub-nav__item sub-nav__item_active">#}
+                {#                            <a href="#">Berries</a>#}
+                {#                        </li>#}
+                {##}
+                {#                        <li class="sub-nav__item">#}
+                {#                            <a href="#">Other</a>#}
+                {#                        </li>#}
+                {#                    </ul>#}
+                {#                    <!-- end sub nav -->#}
+                {#                </li>#}
+                {##}
+                {#                <li class="nav__item">#}
+                {#                    <a href="blog.html">Blog</a>#}
+                {#                </li>#}
+                {##}
+                {#                <li class="nav__item">#}
+                {#                    <a href="shop.html">Shop</a>#}
+                {#                </li>#}
+                {##}
+                {#                <li class="nav__item">#}
+                {#                    <a href="gallery.html">Gallery</a>#}
+                {#                </li>#}
+                {##}
+                {#                <li class="nav__item">#}
+                {#                    <a href="contacts.html">Contacts</a>#}
+                {#                </li>#}
+            </ul>
+            <!-- end nav -->
+
+            {#            <a href="#" class="nav-toggle-btn"><i class="nav-toggle-btn__icon"></i>Drop menu</a>#}
+        </nav>
+        <!-- end wrap nav -->
+    </div>
+    <!-- end container -->
+</header>
+<!-- end header -->

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1 style="text-align: center;">Корзина</h1>
+    {% load carton_tags %}
+    {% get_basket as cart %}
+
+    {% for item in cart.items %}
+        {{ item.quantity }}
+
+    {% endfor %}
+    <div class="shop-items cf">
+        <div class="grid-sizer"></div>
+        {% for item in cart.products %}
+            <div class="shop-item">
+                <div class="shop-item__thumb">
+                    <img src="{{ item.image.url }}" alt="">
+                </div>
+                <!-- end shop item thumb -->
+
+                <div class="shop-item__content">
+                    <h1 class="shop-item__title">{{ item.title }}</h1>
+                    <div class="shop-item__price">{{ item.price }} сом</div>
+                </div>
+                <!-- end shop item content -->
+
+                <a href="{% url 'add_to_cart' %}?product_id={{ item.id }}" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+            </div>
+            <!-- end shop item -->
+
+        {% endfor %}
+
+    </div>
+
+
+
+    </div>
+{% endblock %}
