@@ -55,83 +55,30 @@
             </header>
             <!-- end slider heading -->
 
-            {#            <ul class="slider">#}
-            {#                <li class="slider__item">#}
-            {#                    <div class="shop-item">#}
-            {#                        <div class="shop-item__thumb">#}
-            {#                            <img src="http://placehold.it/240x239" alt="">#}
-            {#                        </div>#}
-            {#                        <!-- end shop item thumb -->#}
-            {##}
-            {#                        <div class="shop-item__content">#}
-            {#                            <h1 class="shop-item__title">Title of the item for exemple</h1>#}
-            {#                            <div class="shop-item__price">$3,200</div>#}
-            {#                        </div>#}
-            {#                        <!-- end shop item content -->#}
-            {##}
-            {#                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>#}
-            {#                    </div>#}
-            {#                    <!-- end shop item -->#}
-            {#                </li>#}
-            {#                <!-- end slider item -->#}
-            {##}
-            {#                <li class="slider__item">#}
-            {#                    <div class="shop-item">#}
-            {#                        <div class="shop-item__thumb">#}
-            {#                            <img src="http://placehold.it/240x239" alt="">#}
-            {#                        </div>#}
-            {#                        <!-- end shop item thumb -->#}
-            {##}
-            {#                        <div class="shop-item__content">#}
-            {#                            <h1 class="shop-item__title">Title of the item for exemple</h1>#}
-            {#                            <div class="shop-item__price">$3,200</div>#}
-            {#                        </div>#}
-            {#                        <!-- end shop item content -->#}
-            {##}
-            {#                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>#}
-            {#                    </div>#}
-            {#                    <!-- end shop item footer -->#}
-            {#                </li>#}
-            {#                <!-- end slider item -->#}
-            {##}
-            {#                <li class="slider__item">#}
-            {#                    <div class="shop-item">#}
-            {#                        <div class="shop-item__thumb">#}
-            {#                            <img src="http://placehold.it/240x239" alt="">#}
-            {#                        </div>#}
-            {#                        <!-- end shop item thumb -->#}
-            {##}
-            {#                        <div class="shop-item__content">#}
-            {#                            <h1 class="shop-item__title">Title of the item for exemple</h1>#}
-            {#                            <div class="shop-item__price">$3,200</div>#}
-            {#                        </div>#}
-            {#                        <!-- end shop item content -->#}
-            {##}
-            {#                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>#}
-            {#                    </div>#}
-            {#                    <!-- end shop item -->#}
-            {#                </li>#}
-            {#                <!-- end slider item -->#}
-            {##}
-            {#                <li class="slider__item">#}
-            {#                    <div class="shop-item">#}
-            {#                        <div class="shop-item__thumb">#}
-            {#                            <img src="http://placehold.it/240x239" alt="">#}
-            {#                        </div>#}
-            {#                        <!-- end shop item thumb -->#}
-            {##}
-            {#                        <div class="shop-item__content">#}
-            {#                            <h1 class="shop-item__title">Title of the item for exemple</h1>#}
-            {#                            <div class="shop-item__price">$3,200</div>#}
-            {#                        </div>#}
-            {#                        <!-- end shop item content -->#}
-            {##}
-            {#                        <a href="ins-shop.html" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>#}
-            {#                    </div>#}
-            {#                    <!-- end shop item -->#}
-            {#                </li>#}
-            {#                <!-- end slider item -->#}
-            {#            </ul>#}
+            <ul class="slider">
+                {% for item in products %}
+                    <li class="slider__item">
+                        <div class="shop-item">
+                            <div class="shop-item__thumb">
+                                <img src="{{ item.image.url }}" alt="">
+                            </div>
+                            <!-- end shop item thumb -->
+
+                            <div class="shop-item__content">
+                                <h1 class="shop-item__title">{{ item.title }}</h1>
+                                <div class="shop-item__price">{{ item.price }}</div>
+                            </div>
+                            <!-- end shop item content -->
+
+                            <a href="{% url 'add_to_cart' %}?product_id={{ item.id }}" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                        </div>
+                        <!-- end shop item -->
+                    </li>
+                    <!-- end slider item -->
+                {% endfor %}
+
+                <!-- end slider item -->
+            </ul>
         </div>
         <!-- end best offers -->
 
