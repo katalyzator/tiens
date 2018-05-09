@@ -212,7 +212,7 @@ table tbody tr td:first-child {
 }
 /* end no padding */
 .container {
-  max-width: 960px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .container_pull-top {

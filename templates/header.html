@@ -3,11 +3,12 @@
 
 <header class="header" style="position: fixed;width: 100%;top: 0;z-index: 1;">
     <div class="container cf">
-        <a href="index.html" class="logo"><img src="{% static 'css/images/tiens_logo.png' %}" alt="Tiens"
-                                               style="width: 153px;    height: 42px;    margin-bottom: 3px;"></a>
-        <a href="index.html" class="logo logo_second-type"><img src="{% static 'css/images/tiens_logo.png' %}"
-                                                                alt="Tiens"
-                                                                style="width: 153px;    height: 42px;    margin-bottom: 3px;"></a>
+        <a href="{% url 'index_view' %}" class="logo"><img src="{% static 'css/images/tiens_logo.png' %}" alt="Tiens"
+                                                           style="width: 153px;    height: 42px; "></a>
+        <a href="{% url 'index_view' %}" class="logo logo_second-type"><img
+                src="{% static 'css/images/tiens_logo.png' %}"
+                alt="Tiens"
+                style="width: 153px;    height: 42px;    margin-bottom: 3px;"></a>
         <!-- end logo -->
 
         <div class="basket float-right">
@@ -18,6 +19,11 @@
             <a href="{% url 'cart_view' %}" class="basket__link">Корзина</a>
             <span class="basket__count">{{ cart.count }}</span>
             <div class="basket__price">{{ cart.total }} сом</div>
+            <br>
+            <div class="basket__price" style="margin-top: 5px; font-size: 18px;"><a href="tel: +996501308808"
+                                                                                    style="color: #ffffff"> +996(501)
+                308 808 </a></div>
+
 
         </div>
         <!-- end basket -->
@@ -25,8 +31,12 @@
         <nav class="wrap-nav">
             <ul class="nav">
                 <li class="nav__item">
-                    <a href="{% url 'index_view' %}">Главная</a>
+                    <a href="{% url 'index_view' %}" style="font-size: 14px;">Главная</a>
                 </li>
+                {##}
+                {#                <li class="nav__item aligncenter">#}
+                {#                    <a href="{% url 'index_view' %}" style="font-size: 16px;">+996 (501) 308 808</a>#}
+                {#                </li>#}
 
                 {#                <li class="nav__item">#}
                 {#                    <a href="about.html">About</a>#}
@@ -76,7 +86,9 @@
             {#            <a href="#" class="nav-toggle-btn"><i class="nav-toggle-btn__icon"></i>Drop menu</a>#}
         </nav>
         <!-- end wrap nav -->
+
     </div>
     <!-- end container -->
+
 </header>
 <!-- end header -->

@@ -633,7 +633,7 @@ table tbody tr td:first-child {
   color: #fff;
   text-transform: uppercase;
   border-top: 2px solid transparent;
-  padding: 16px 0;
+  padding: 18px 0;
 }
 .nav__item > a:hover {
   border-top: 2px solid #ffed00;
@@ -1773,7 +1773,7 @@ table tbody tr td:first-child {
   padding: 10.4166666667% 4.16666666667%;
 }
 .shop-item__title {
-  font-size: .92307692308em;
+  font-size: 18px;
   color: #686868;
   margin-bottom: 2.30414746544%;
 }
@@ -1915,6 +1915,7 @@ table tbody tr td:first-child {
   cursor: default;
   background: url(images/icons.png) no-repeat -300px 0;
 }
+
 .price-range__scale .ui-slider-range {
   position: absolute;
   z-index: 1;
@@ -1964,7 +1965,7 @@ table tbody tr td:first-child {
   height: 100%;
 }
 .main-slider__item_first-bg {
-  background: url(http://placehold.it/1920x663) no-repeat center;
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
