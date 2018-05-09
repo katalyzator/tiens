@@ -43,11 +43,11 @@
 
         <div class="wrap-slider">
             <header class="slider-heading cf">
-                <div class="slider-controls">
-                    <div class="slider-controls__prev"></div>
-                    <div class="slider-controls__next"></div>
-                </div>
-                <!-- end slider controls -->
+{#                <div class="slider-controls">#}
+{#                    <div class="slider-controls__prev"></div>#}
+{#                    <div class="slider-controls__next"></div>#}
+{#                </div>#}
+{#                <!-- end slider controls -->#}
 
                 <h1 class="slider-heading__title">Специальные предложения</h1>
 
@@ -70,7 +70,8 @@
                             </div>
                             <!-- end shop item content -->
 
-                            <a href="{% url 'add_to_cart' %}?product_id={{ item.id }}" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
+                            <a href="{% url 'add_to_cart' %}?product_id={{ item.id }}" class="buy-btn"><i
+                                    class="buy-btn__icon"></i>Купить</a>
                         </div>
                         <!-- end shop item -->
                     </li>
@@ -82,14 +83,18 @@
         </div>
         <!-- end best offers -->
 
-        <h1 style="text-align: center;">Продукция</h1>
+        <header class="slider-heading cf">
+
+            <h1 class="slider-heading__title">Продукция</h1>
+
+        </header>
 
         <div class="shop-items cf">
             <div class="grid-sizer"></div>
             {% for item in products %}
                 <div class="shop-item">
                     <div class="shop-item__thumb">
-                        <img src="{{ item.image.url }}" alt="">
+                        <img src="{{ item.image.url }}" alt="" style="padding: 15px;">
                     </div>
                     <!-- end shop item thumb -->
 
@@ -100,7 +105,7 @@
                     <!-- end shop item content -->
 
                     <a href="{% url 'add_to_cart' %}?product_id={{ item.id }}" class="buy-btn" id="ajax_cart_add"><i
-                            class="buy-btn__icon"></i>Buy</a>
+                            class="buy-btn__icon"></i>Купить</a>
                 </div>
                 <!-- end shop item -->
 
@@ -109,36 +114,36 @@
         </div>
 
 
-        <div class="picture-block">
-            <h1 class="picture-block__title">experience</h1>
-            <p>However, back over in reality some project schedules and with<br>the web copy, we want you think
-                about
-                how numbers</p>
-            <a href="#" class="btn">See more &#8250;</a>
-        </div>
-        <!-- end picture block -->
+        {#        <div class="picture-block">#}
+        {#            <h1 class="picture-block__title">experience</h1>#}
+        {#            <p>However, back over in reality some project schedules and with<br>the web copy, we want you think#}
+        {#                about#}
+        {#                how numbers</p>#}
+        {#            <a href="#" class="btn">See more &#8250;</a>#}
+        {#        </div>#}
+        {#        <!-- end picture block -->#}
 
-        <div class="category-products cf">
-            <div class="category-product">
-                <h1 class="category__title">Fruits</h1>
-                <a href="shop.html" class="category__btn">See more &#8250;</a>
-            </div>
-            <!-- end category product -->
-
-            <div class="category-product">
-                <h1 class="category__title">Vegetables</h1>
-                <a href="shop.html" class="category__btn">See more &#8250;</a>
-            </div>
-            <!-- end category product -->
-
-            <div class="category-product">
-                <h1 class="category__title">Berries</h1>
-                <a href="shop.html" class="category__btn">See more &#8250;</a>
-            </div>
-            <!-- end category product -->
-        </div>
-        <!-- end category products -->
-        <!-- end container -->
+        {#        <div class="category-products cf">#}
+        {#            <div class="category-product">#}
+        {#                <h1 class="category__title">Fruits</h1>#}
+        {#                <a href="shop.html" class="category__btn">See more &#8250;</a>#}
+        {#            </div>#}
+        {#            <!-- end category product -->#}
+        {##}
+        {#            <div class="category-product">#}
+        {#                <h1 class="category__title">Vegetables</h1>#}
+        {#                <a href="shop.html" class="category__btn">See more &#8250;</a>#}
+        {#            </div>#}
+        {#            <!-- end category product -->#}
+        {##}
+        {#            <div class="category-product">#}
+        {#                <h1 class="category__title">Berries</h1>#}
+        {#                <a href="shop.html" class="category__btn">See more &#8250;</a>#}
+        {#            </div>#}
+        {#            <!-- end category product -->#}
+        {#        </div>#}
+        {#        <!-- end category products -->#}
+        {#        <!-- end container -->#}
 
     </div>
 {% endblock %}
