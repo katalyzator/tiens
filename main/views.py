@@ -9,10 +9,17 @@ from main.models import Product
 
 
 def add(request):
-
     cart = Cart(request.session)
     product = Product.objects.get(id=request.GET.get('product_id'))
     cart.add(product, price=product.price)
+
+    return render_to_response('partial/basket_values.html', dict(cart=cart))
+
+
+def delete_cart_item(request):
+    cart = Cart(request.session)
+    product = Product.objects.get(id=request.GET.get('product_id'))
+    cart.remove(product)
 
     return render_to_response('partial/basket_values.html', dict(cart=cart))
 

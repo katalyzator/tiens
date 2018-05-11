@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^products/$', products_view, name='product_view'),
     url(r'^shop/$', shop_view, name='shop_view'),
     url(r'^add_to_cart/$', add, name='add_to_cart'),
+    url(r'^delete/$', delete_cart_item, name='delete_from_cart'),
     url(r'^cart/$', cart_view, name='cart_view'),
 ]
 

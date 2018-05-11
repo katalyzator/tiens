@@ -1,39 +1,67 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <div class="container">
+        <h1 style="text-align: center;">Корзина</h1>
 
-    <h1 style="text-align: center;">Корзина</h1>
-    {% load carton_tags %}
-    {% get_basket as cart %}
 
-    {% for item in cart.items %}
-        {{ item.quantity }}
+        <div class="shop-items cf">
+            <div class="grid-sizer"></div>
+            {% load carton_tags %}
+            {% get_basket as cart %}
+            {% for item in cart.products %}
+                <div class="shop-item">
+                    <div class="shop-item__thumb">
+                        <img src="{{ item.image.url }}" alt="">
+                    </div>
+                    <!-- end shop item thumb -->
 
-    {% endfor %}
-    <div class="shop-items cf">
-        <div class="grid-sizer"></div>
-        {% for item in cart.products %}
-            <div class="shop-item">
-                <div class="shop-item__thumb">
-                    <img src="{{ item.image.url }}" alt="">
+                    <div class="shop-item__content">
+                        <h1 class="shop-item__title">{{ item.title|truncatechars:30 }}</h1>
+                        <div class="shop-item__price">{{ item.price }} сом</div>
+                    </div>
+                    <!-- end shop item content -->
+
+                    <a href="{% url 'delete_from_cart' %}?product_id={{ item.id }}" class="buy-btn"><i
+                            class="buy-btn__icon"></i>Удалить</a>
                 </div>
-                <!-- end shop item thumb -->
+                <!-- end shop item -->
 
-                <div class="shop-item__content">
-                    <h1 class="shop-item__title">{{ item.title }}</h1>
-                    <div class="shop-item__price">{{ item.price }} сом</div>
-                </div>
-                <!-- end shop item content -->
+            {% endfor %}
 
-                <a href="{% url 'add_to_cart' %}?product_id={{ item.id }}" class="buy-btn"><i class="buy-btn__icon"></i>Buy</a>
-            </div>
-            <!-- end shop item -->
-
-        {% endfor %}
-
+        </div>
     </div>
+{% endblock %}
 
+{% block custom_scripts %}
+    <script>
+        $('.buy-btn').each(function (i, obj) {
+            $(obj).on('click', function (event) {
+                event.preventDefault();
+                var that = this;
+                console.log($(that).attr('href'));
 
-
-    </div>
+                $.ajax({
+                    method: 'GET',
+                    dataType: 'HTML',
+                    url: $(that).attr('href'),
+                    success: function (response) {
+                        $('.basket').html(response);
+                        {#                        $('.result').html(response);#}
+                        {#var data = JSON.parse(response);#}
+                        {##}
+                        {#var input_form = document.createElement("inpu");#}
+                        {#input_form.type = "text";#}
+                        {#input_form.value = "det=" + data.result;#}
+                        {#input_form.className = "form-button"; // set the CSS class#}
+                        {#var block = document.getElementById('matrix_id');#}
+                        {#block.append(input_form);#}
+                    },
+                    error: function () {
+                        console.error('Error to send requet!');
+                    }
+                });
+            })
+        });
+    </script>
 {% endblock %}
