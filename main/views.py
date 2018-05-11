@@ -2,10 +2,15 @@
 from __future__ import unicode_literals
 
 from carton.cart import Cart
-from django.http import HttpResponse
+from django.core.mail import EmailMessage
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, render_to_response
+from django.template import Template
+from django.template import Context
+from django.views.decorators.csrf import csrf_exempt
 
 from main.models import Product
+from tiens.settings import BASE_DIR
 
 
 def add(request):
@@ -51,3 +56,24 @@ def cart_view(request):
     template = 'cart.html'
 
     return render(request, template, context)
+
+
+@csrf_exempt
+def send_message_with_cart(request):
+    import os
+    f = open(os.path.join(BASE_DIR, "templates/mail.html"))
+
+    name = request.POST.get('name')
+    phone = request.POST.get('phone_number')
+
+    cart = Cart(request.session)
+
+    content = f.read()
+    f.close()
+    context = Context(dict(name=name, phone=phone, cart=cart))
+    template = Template(content)
+    mail = EmailMessage('Заявка на Кастинг', template.render(context), to=['odaniaro@gmail.com'])
+    mail.content_subtype = 'html'
+    mail.send()
+
+    return JsonResponse(dict(result="ok"))

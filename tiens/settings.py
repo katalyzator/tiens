@@ -125,3 +125,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static", "static_root")
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "templates", "assets", "static_files"),
 )
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'aibek.widgets@gmail.com'
+EMAIL_HOST_PASSWORD = 'izpodkaptalbest'
+EMAIL_PORT = 587

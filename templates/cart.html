@@ -30,13 +30,13 @@
             {% endfor %}
 
         </div>
-        <form action="#" method="get" class="contacts-form">
+        <form action="{% url 'send_message' %}" method="post" class="contacts-form">
             <h1 class="contacts-form__title">Заполните форму заявку для покупки</h1>
 
             <input type="text" name="name" placeholder="Имя" required>
-            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="email" name="email" placeholder="E-mail">
             <input type="text" name="phone_number" placeholder="Номер телефона">
-{#            <textarea placeholder="Message..."></textarea>#}
+            {#            <textarea placeholder="Message..."></textarea>#}
             <button type="submit" class="btn">Отправить<i class="form-btn-arrow"></i></button>
         </form>
     </div>
@@ -66,6 +66,27 @@
                         {#input_form.className = "form-button"; // set the CSS class#}
                         {#var block = document.getElementById('matrix_id');#}
                         {#block.append(input_form);#}
+                    },
+                    error: function () {
+                        console.error('Error to send requet!');
+                    }
+                });
+            })
+        });
+
+        $('.contacts-form').each(function (i, obj) {
+            $(obj).submit(function (event) {
+                event.preventDefault();
+                var that = this;
+                console.log($(that).attr('action'));
+
+                $.ajax({
+                    method: 'POST',
+                    dataType: 'HTML',
+                    data: $(that).serialize(),
+                    url: $(that).attr('action'),
+                    success: function (response) {
+                        alert('success');
                     },
                     error: function () {
                         console.error('Error to send requet!');
