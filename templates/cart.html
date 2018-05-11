@@ -30,7 +30,17 @@
             {% endfor %}
 
         </div>
+        <form action="#" method="get" class="contacts-form">
+            <h1 class="contacts-form__title">Заполните форму заявку для покупки</h1>
+
+            <input type="text" name="name" placeholder="Имя" required>
+            <input type="email" name="email" placeholder="E-mail" required>
+            <input type="text" name="phone_number" placeholder="Номер телефона">
+{#            <textarea placeholder="Message..."></textarea>#}
+            <button type="submit" class="btn">Отправить<i class="form-btn-arrow"></i></button>
+        </form>
     </div>
+
 {% endblock %}
 
 {% block custom_scripts %}
