@@ -72,7 +72,7 @@ def send_message_with_cart(request):
     f.close()
     context = Context(dict(name=name, phone=phone, cart=cart))
     template = Template(content)
-    mail = EmailMessage('Заявка на Кастинг', template.render(context), to=['odaniaro@gmail.com'])
+    mail = EmailMessage('Заявка на покупку продукта', template.render(context), to=['odaniaro@gmail.com'])
     mail.content_subtype = 'html'
     mail.send()
 
