@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-
+ {% load staticfiles %}
 {% block content %}
     <div class="wrap-main-slider">
-        <ul class="main-slider">
-            {% load staticfiles %}
-            <li class="main-slider__item main-slider__item_first-bg" style="background: url({% static 'css/images/green_diamond_patterns-wallpaper-1920x1080.jpg' %}) no-repeat center;">
+        <ul class="main-slider" style="background: url({% static 'css/images/green_diamond_patterns-wallpaper-1920x1080.jpg' %}) no-repeat center;">
+
+            <li class="main-slider__item main-slider__item_first-bg" >
                 <div class="container">
                     <h1 class="main-slider__title">treat your family<br>with fresh and juicy fruits!</h1>
 
@@ -111,41 +111,7 @@
                 <!-- end shop item -->
 
             {% endfor %}
-
         </div>
-
-
-        {#        <div class="picture-block">#}
-        {#            <h1 class="picture-block__title">experience</h1>#}
-        {#            <p>However, back over in reality some project schedules and with<br>the web copy, we want you think#}
-        {#                about#}
-        {#                how numbers</p>#}
-        {#            <a href="#" class="btn">See more &#8250;</a>#}
-        {#        </div>#}
-        {#        <!-- end picture block -->#}
-
-        {#        <div class="category-products cf">#}
-        {#            <div class="category-product">#}
-        {#                <h1 class="category__title">Fruits</h1>#}
-        {#                <a href="shop.html" class="category__btn">See more &#8250;</a>#}
-        {#            </div>#}
-        {#            <!-- end category product -->#}
-        {##}
-        {#            <div class="category-product">#}
-        {#                <h1 class="category__title">Vegetables</h1>#}
-        {#                <a href="shop.html" class="category__btn">See more &#8250;</a>#}
-        {#            </div>#}
-        {#            <!-- end category product -->#}
-        {##}
-        {#            <div class="category-product">#}
-        {#                <h1 class="category__title">Berries</h1>#}
-        {#                <a href="shop.html" class="category__btn">See more &#8250;</a>#}
-        {#            </div>#}
-        {#            <!-- end category product -->#}
-        {#        </div>#}
-        {#        <!-- end category products -->#}
-        {#        <!-- end container -->#}
-
     </div>
 {% endblock %}
 
