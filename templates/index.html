@@ -100,7 +100,7 @@
                     <!-- end shop item thumb -->
 
                     <div class="shop-item__content">
-                        <h1 class="shop-item__title" style="font-size: 18px">{{ item.title|truncatechars:30 }}</h1>
+                        <h1 class="shop-item__title" style="font-size: 14px">{{ item.title|truncatechars:30 }}</h1>
                         <div class="shop-item__price">{{ item.price }} сом</div>
                     </div>
                     <!-- end shop item content -->
@@ -171,7 +171,7 @@
                         {#input_form.value = "det=" + data.result;#}
                         {#input_form.className = "form-button"; // set the CSS class#}
                         {#var block = document.getElementById('matrix_id');#}
-                        {#block.append(input_form);#}
+                        {#block.append(finput_form);#}
                     },
                     error: function () {
                         console.error('Error to send requet!');
