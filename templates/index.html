@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
- {% load staticfiles %}
+{% load staticfiles %}
 {% block content %}
-    <div class="wrap-main-slider">
-        <ul class="main-slider" style="background: url({% static 'css/images/green_diamond_patterns-wallpaper-1920x1080.jpg' %}) no-repeat center;">
 
-            <li class="main-slider__item main-slider__item_first-bg" >
+
+
+    <div class="wrap-main-slider">
+        <ul class="main-slider"
+            style="background: url({% static 'css/images/green_diamond_patterns-wallpaper-1920x1080.jpg' %}) no-repeat center;">
+
+            <li class="main-slider__item main-slider__item_first-bg">
                 <div class="container">
                     <h1 class="main-slider__title">treat your family<br>with fresh and juicy fruits!</h1>
 
@@ -32,7 +36,7 @@
                     </article>
                     <!-- main slider post -->
                 </div>
-{#                <!-- end container -->#}
+                {#                <!-- end container -->#}
             </li>
             <!-- end main slider item -->
         </ul>
@@ -41,6 +45,68 @@
     <!-- end wrap main slider -->
 
     <div class="container">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="shop-item shop-item_big shop-item_ins cf">
+                            <div class="shop-item__content">
+                                <h1 class="shop-item__title">orange</h1>
+
+                                <p>In an ideal world this website wouldn't exist, a client would acknowledge the
+                                    importance having web copy
+                                    before the design starts.</p>
+
+                                <blockquote class="shop-item__quote">
+                                    <p>Best treat when inviting friends or family!</p>
+                                </blockquote>
+
+                                <div class="shop-item__price">$56<span>$75</span></div>
+                            </div>
+                            <!-- end shop item content -->
+
+                            <div class="shop-item__thumb">
+                                <img src="http://placehold.it/304x263" alt="">
+
+                                <a href="#" class="buy-btn buy-btn_round"><i class="buy-btn__icon"></i>Buy</a>
+                            </div>
+                            <!-- end shop item thumb -->
+
+                            <div class="shop-item__details">
+                                <div class="amount">
+                                    <input type="text" value="1" size="5" class="amount__field"/>
+                                    <span class="amount__btn amount__btn_minus">-</span>
+                                    <span class="amount__btn amount__btn_plus">+</span>
+                                </div>
+                                <!-- end amount -->
+                                <br>
+                                <a href="#" class="buy-btn buy-btn_round"><i class="buy-btn__icon"></i>Buy</a>
+                            </div>
+                            <!-- end shop item detailed col -->
+                        </div>
+                        <!-- end shop item big -->
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="wrap-slider">
             <header class="slider-heading cf">
@@ -66,7 +132,8 @@
                             <!-- end shop item thumb -->
 
                             <div class="shop-item__content">
-                                <h1 class="shop-item__title"  style="font-size: 14px">{{ item.title|truncatechars:20 }}</h1>
+                                <h1 class="shop-item__title"
+                                    style="font-size: 14px">{{ item.title|truncatechars:20 }}</h1>
                                 <div class="shop-item__price">{{ item.price }}</div>
                             </div>
                             <!-- end shop item content -->
