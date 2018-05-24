@@ -1,5 +1,19 @@
 {% load staticfiles %}
 
+<style>
+    h1 {
+        font-size: 2.5em !important;
+    }
+
+    .shop-item__title {
+        font-size: 18px !important;
+    }
+
+    .shop-item__price {
+        font-size: 22px !important;
+    }
+</style>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +74,11 @@
 
 <script src="{% static 'js/scripts.js' %}"></script>
 <!-- end custom -->
-{% block custom_scripts %}{% endblock %}
+{% block custom_scripts %}
+
+{% endblock %}
+
+
 </body>
 <!-- end body -->
 </html>

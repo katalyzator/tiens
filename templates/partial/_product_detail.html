@@ -1,0 +1,60 @@
+<div class="shop-item shop-item_big shop-item_ins cf">
+    <div class="shop-item__content">
+        <h1 class="shop-item__title">{{ product.title }}</h1>
+
+        <p>{{ product.description }}</p>
+
+        <div class="shop-item__price">{{ product.price }}<span>$75</span></div>
+    </div>
+    <!-- end shop item content -->
+
+    <div class="shop-item__thumb">
+        <img src="{{ product.image.url }}" alt="">
+
+    </div>
+    <!-- end shop item thumb -->
+
+    <div class="shop-item__details">
+        {#        <div class="amount">#}
+        {#            <input type="text" value="1" size="5" class="amount__field"/>#}
+        {#            <span class="amount__btn amount__btn_minus">-</span>#}
+        {#            <span class="amount__btn amount__btn_plus">+</span>#}
+        {#        </div>#}
+        {#        <!-- end amount -->#}
+        <br>
+        <a href="{% url 'add_to_cart' id=product.id %}" id="add_to_card" class="buy-btn"
+           style="font-size: 16px !important; height: auto; width: 200px; text-align: center;"><i
+                class="buy-btn__icon"></i>Добавить в корзину</a>
+    </div>
+    <!-- end shop item detailed col -->
+</div>
+<!-- end shop item big -->
+
+<script>
+    $('#add_to_card').on('click', function (e) {
+        e.preventDefault();
+
+        var that = this;
+        console.log($(that).attr('href'));
+        $.ajax({
+            method: 'POST',
+            dataType: 'HTML',
+            url: $(that).attr('href'),
+            success: function (response) {
+                $('.basket').html(response);
+                {#                        $('.result').html(response);#}
+                {#var data = JSON.parse(response);#}
+                {##}
+                {#var input_form = document.createElement("inpu");#}
+                {#input_form.type = "text";#}
+                {#input_form.value = "det=" + data.result;#}
+                {#input_form.className = "form-button"; // set the CSS class#}
+                {#var block = document.getElementById('matrix_id');#}
+                {#block.append(finput_form);#}
+            },
+            error: function () {
+                console.error('Error to send requet!');
+            }
+        });
+    });
+</script>

@@ -13,20 +13,29 @@ from main.models import Product
 from tiens.settings import BASE_DIR
 
 
-def add(request):
+@csrf_exempt
+def add(request, id):
     cart = Cart(request.session)
-    product = Product.objects.get(id=request.GET.get('product_id'))
+    product = Product.objects.get(id=id)
     cart.add(product, price=product.price)
 
     return render_to_response('partial/basket_values.html', dict(cart=cart))
 
 
+@csrf_exempt
 def delete_cart_item(request):
     cart = Cart(request.session)
     product = Product.objects.get(id=request.GET.get('product_id'))
     cart.remove(product)
 
     return render_to_response('partial/basket_values.html', dict(cart=cart))
+
+
+@csrf_exempt
+def ajax_product_detail(request, id):
+    product = Product.objects.get(id=id)
+
+    return render_to_response('partial/_product_detail.html', dict(product=product))
 
 
 def index_view(request):

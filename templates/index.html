@@ -46,17 +46,13 @@
 
     <div class="container">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-            Launch demo modal
-        </button>
 
         <!-- Modal -->
-        <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog"
+        <div class="modal fade " id="exampleModalCenter" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-dialog modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -64,24 +60,23 @@
                     <div class="modal-body">
                         <div class="shop-item shop-item_big shop-item_ins cf">
                             <div class="shop-item__content">
-                                <h1 class="shop-item__title">orange</h1>
+                                <h1 class="shop-item__title">{{ product.title }}</h1>
 
-                                <p>In an ideal world this website wouldn't exist, a client would acknowledge the
-                                    importance having web copy
-                                    before the design starts.</p>
+                                <p>{{ product.description }}</p>
 
                                 <blockquote class="shop-item__quote">
                                     <p>Best treat when inviting friends or family!</p>
                                 </blockquote>
 
-                                <div class="shop-item__price">$56<span>$75</span></div>
+                                <div class="shop-item__price">{{ product.price }}<span>$75</span></div>
                             </div>
                             <!-- end shop item content -->
 
                             <div class="shop-item__thumb">
-                                <img src="http://placehold.it/304x263" alt="">
+                                <img src="{{ product.image.url }}" alt="">
 
-                                <a href="#" class="buy-btn buy-btn_round"><i class="buy-btn__icon"></i>Buy</a>
+                                <a href="#" class="buy-btn buy-btn_round"><i class="buy-btn__icon"></i>Добавить в
+                                    корзину</a>
                             </div>
                             <!-- end shop item thumb -->
 
@@ -100,10 +95,7 @@
                         <!-- end shop item big -->
 
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -124,25 +116,28 @@
 
             <ul class="slider">
                 {% for item in products %}
-                    <li class="slider__item">
-                        <div class="shop-item">
-                            <div class="shop-item__thumb">
-                                <img src="{{ item.image.url }}" alt="">
-                            </div>
-                            <!-- end shop item thumb -->
+                    <a href="{% url 'ajax_product' id=item.id %}" class="ajax_link_product">
+                        <li class="slider__item">
+                            <div class="shop-item">
+                                <div class="shop-item__thumb">
+                                    <img src="{{ item.image.url }}" alt="">
+                                </div>
+                                <!-- end shop item thumb -->
 
-                            <div class="shop-item__content">
-                                <h1 class="shop-item__title"
-                                    style="font-size: 14px">{{ item.title|truncatechars:20 }}</h1>
-                                <div class="shop-item__price">{{ item.price }}</div>
-                            </div>
-                            <!-- end shop item content -->
+                                <div class="shop-item__content">
+                                    <h1 class="shop-item__title"
+                                        style="font-size: 14px">{{ item.title|truncatechars:20 }}</h1>
+                                    <div class="shop-item__price">{{ item.price }} сом</div>
+                                </div>
+                                <!-- end shop item content -->
 
-                            <a href="{% url 'add_to_cart' %}?product_id={{ item.id }}" class="buy-btn"><i
-                                    class="buy-btn__icon"></i>Купить</a>
-                        </div>
-                        <!-- end shop item -->
-                    </li>
+                                <a href="{% url 'ajax_product' id=item.id %}" class="buy-btn ajax_link_product"
+                                   style="font-size: 16px; height: auto;"><i
+                                        class="buy-btn__icon"></i>Посмотреть</a>
+                            </div>
+                            <!-- end shop item -->
+                        </li>
+                    </a>
                     <!-- end slider item -->
                 {% endfor %}
 
@@ -160,23 +155,25 @@
         <div class="shop-items cf">
             <div class="grid-sizer"></div>
             {% for item in products %}
-                <div class="shop-item">
-                    <div class="shop-item__thumb">
-                        <img src="{{ item.image.url }}" alt="" style="padding: 15px;">
+                <a href="{% url 'ajax_product' id=item.id %}" class="ajax_link_product">
+                    <div class="shop-item">
+                        <div class="shop-item__thumb">
+                            <img src="{{ item.image.url }}" alt="" style="padding: 15px;">
+                        </div>
+                        <!-- end shop item thumb -->
+
+                        <div class="shop-item__content">
+                            <h1 class="shop-item__title" style="font-size: 14px">{{ item.title|truncatechars:20 }}</h1>
+                            <div class="shop-item__price">{{ item.price }} сом</div>
+                        </div>
+                        <!-- end shop item content -->
+
+                        <a href="{% url 'ajax_product' id=item.id %}" class="buy-btn ajax_link_product"
+                           id="ajax_cart_add" style="font-size: 16px; height: auto;"><i
+                                class="buy-btn__icon"></i>Посмотреть</a>
                     </div>
-                    <!-- end shop item thumb -->
-
-                    <div class="shop-item__content">
-                        <h1 class="shop-item__title" style="font-size: 14px">{{ item.title|truncatechars:20 }}</h1>
-                        <div class="shop-item__price">{{ item.price }} сом</div>
-                    </div>
-                    <!-- end shop item content -->
-
-                    <a href="{% url 'add_to_cart' %}?product_id={{ item.id }}" class="buy-btn" id="ajax_cart_add"><i
-                            class="buy-btn__icon"></i>Купить</a>
-                </div>
-                <!-- end shop item -->
-
+                    <!-- end shop item -->
+                </a>
             {% endfor %}
         </div>
     </div>
@@ -184,27 +181,20 @@
 
 {% block custom_scripts %}
     <script>
-        $('.buy-btn').each(function (i, obj) {
+        $('.ajax_link_product').each(function (i, obj) {
             $(obj).on('click', function (event) {
                 event.preventDefault();
                 var that = this;
                 console.log($(that).attr('href'));
 
                 $.ajax({
-                    method: 'GET',
+                    method: 'POST',
                     dataType: 'HTML',
                     url: $(that).attr('href'),
                     success: function (response) {
-                        $('.basket').html(response);
-                        {#                        $('.result').html(response);#}
-                        {#var data = JSON.parse(response);#}
-                        {##}
-                        {#var input_form = document.createElement("inpu");#}
-                        {#input_form.type = "text";#}
-                        {#input_form.value = "det=" + data.result;#}
-                        {#input_form.className = "form-button"; // set the CSS class#}
-                        {#var block = document.getElementById('matrix_id');#}
-                        {#block.append(finput_form);#}
+                        $('.modal-body').html(response);
+                        $('#exampleModalCenter').modal('toggle');
+
                     },
                     error: function () {
                         console.error('Error to send requet!');
@@ -212,5 +202,9 @@
                 });
             })
         });
+
+
     </script>
+
+
 {% endblock %}
