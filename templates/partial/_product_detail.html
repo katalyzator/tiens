@@ -1,17 +1,18 @@
 <div class="shop-item shop-item_big shop-item_ins cf">
+    <div class="shop-item__thumb">
+        <img src="{{ product.image.url }}" alt="">
+
+    </div>
     <div class="shop-item__content">
         <h1 class="shop-item__title">{{ product.title }}</h1>
 
-        <p>{{ product.description }}</p>
+        <p>{{ product.description|truncatewords:20 }}</p>
 
         <div class="shop-item__price">{{ product.price }}<span>$75</span></div>
     </div>
     <!-- end shop item content -->
 
-    <div class="shop-item__thumb">
-        <img src="{{ product.image.url }}" alt="">
 
-    </div>
     <!-- end shop item thumb -->
 
     <div class="shop-item__details">
