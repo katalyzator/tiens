@@ -3,12 +3,12 @@
     <div class="shop-item__thumb">
         <img src="{{ product.image.url }}" alt="">
     </div>
-    <div class="shop-item__content">
+    <div class="shop-item__content" style="width: auto;">
 
         <div class="shop-item__price" style="font-size: 30px !important;">{{ product.price }} сом<span></span></div>
         <br>
         <a href="{% url 'add_to_cart' id=product.id %}" id="add_to_card" class="buy-btn"
-           style="font-size: 16px !important; height: auto; width: auto; text-align: center;">Добавить <br> в
+           style="font-size: 16px !important; height: auto; width: 200px; text-align: center;"><i class="buy-btn__icon"></i>Добавить в
             корзину</a>
     </div>
     <br>
