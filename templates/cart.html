@@ -11,7 +11,7 @@
             {% get_basket as cart %}
             {% for item in cart.products %}
                 <div class="shop-item">
-                    <div class="shop-item__thumb" >
+                    <div class="shop-item__thumb">
                         <img src="{{ item.image.url }}" alt="" style="padding: 15px;">
                     </div>
                     <!-- end shop item thumb -->
@@ -22,7 +22,8 @@
                     </div>
                     <!-- end shop item content -->
 
-                    <a href="{% url 'delete_from_cart' %}?product_id={{ item.id }}" class="buy-btn"><i
+                    <a href="{% url 'delete_from_cart' %}?product_id={{ item.id }}" class="buy-btn"
+                       style=" line-height: 0;    font-size: 24px;"><i
                             class="buy-btn__icon"></i>Удалить</a>
                 </div>
                 <!-- end shop item -->
@@ -31,15 +32,15 @@
 
         </div>
     </div>
-        <form action="{% url 'send_message' %}" method="post" class="contacts-form">
-            <h1 class="contacts-form__title">Заполните форму заявку для покупки</h1>
+    <form action="{% url 'send_message' %}" method="post" class="contacts-form">
+        <h1 class="contacts-form__title">Заполните форму заявку для покупки</h1>
 
-            <input type="text" name="name" placeholder="Имя" required>
-            <input type="email" name="email" placeholder="E-mail">
-            <input type="text" name="phone_number" placeholder="Номер телефона">
-            {#            <textarea placeholder="Message..."></textarea>#}
-            <button type="submit" class="btn">Отправить<i class="form-btn-arrow"></i></button>
-        </form>
+        <input type="text" name="name" placeholder="Имя" required>
+        <input type="email" name="email" placeholder="E-mail">
+        <input type="text" name="phone_number" placeholder="Номер телефона">
+        {#            <textarea placeholder="Message..."></textarea>#}
+        <button type="submit" class="btn">Отправить<i class="form-btn-arrow"></i></button>
+    </form>
 
 
 {% endblock %}

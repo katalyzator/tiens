@@ -3,39 +3,43 @@
     <div class="shop-item__thumb">
         <img src="{{ product.image.url }}" alt="">
     </div>
-     <div class="shop-item__content">
+    <div class="shop-item__content">
 
         <div class="shop-item__price" style="font-size: 30px !important;">{{ product.price }} сом<span></span></div>
+        <br>
+        <a href="{% url 'add_to_cart' id=product.id %}" id="add_to_card" class="buy-btn"
+           style="font-size: 16px !important; height: auto; width: auto; text-align: center;">Добавить <br> в
+            корзину</a>
     </div>
     <br>
 
-    <div class="shop-item__details">
-        {#        <div class="amount">#}
-        {#            <input type="text" value="1" size="5" class="amount__field"/>#}
-        {#            <span class="amount__btn amount__btn_minus">-</span>#}
-        {#            <span class="amount__btn amount__btn_plus">+</span>#}
-        {#        </div>#}
-        {#        <!-- end amount -->#}
-        <br>
-        <a href="{% url 'add_to_cart' id=product.id %}" id="add_to_card" class="buy-btn"
-           style="font-size: 16px !important; height: auto; width: 200px; text-align: center;"><i
-                class="buy-btn__icon"></i>Добавить в корзину</a>
-    </div>
+    {#    <div class="shop-item__details">#}
+    {#        <div class="amount">#}
+    {#            <input type="text" value="1" size="5" class="amount__field"/>#}
+    {#            <span class="amount__btn amount__btn_minus">-</span>#}
+    {#            <span class="amount__btn amount__btn_plus">+</span>#}
+    {#        </div>#}
+    {#        <!-- end amount -->#}
+    {#        <br>#}
+    {#        <a href="{% url 'add_to_cart' id=product.id %}" id="add_to_card" class="buy-btn"#}
+    {#           style="font-size: 16px !important; height: auto; width: 200px; text-align: center;"><i#}
+    {#                class="buy-btn__icon"></i>Добавить в корзину</a>#}
+    {#    </div>#}
 
 </div>
-    <div class="shop-item__content">
-        <h1 class="shop-item__title">{{ product.title }}</h1>
+<div class="shop-item__content" style="padding-top: 0;">
+    <h1>{{ product.title }}</h1>
 
-        <p>{{ product.description }}</p>
+    <p>{{ product.description }}</p>
 
-{#        <div class="shop-item__price">{{ product.price }} сом<span></span></div>#}
-    </div>
-    <!-- end shop item content -->
+    {#        <div class="shop-item__price">{{ product.price }} сом<span></span></div>#}
+</div>
+<!-- end shop item content -->
 
 
-    <!-- end shop item thumb -->
+<!-- end shop item thumb -->
 
-    <!-- end shop item detailed col -->
+<!-- end shop item detailed col -->
 
 <!-- end shop item big -->
 
