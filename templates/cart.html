@@ -11,13 +11,13 @@
             {% get_basket as cart %}
             {% for item in cart.products %}
                 <div class="shop-item">
-                    <div class="shop-item__thumb">
-                        <img src="{{ item.image.url }}" alt="">
+                    <div class="shop-item__thumb" >
+                        <img src="{{ item.image.url }}" alt="" style="padding: 15px;">
                     </div>
                     <!-- end shop item thumb -->
 
                     <div class="shop-item__content">
-                        <h1 class="shop-item__title">{{ item.title|truncatechars:30 }}</h1>
+                        <h1 class="shop-item__title" style="font-size: 14px">{{ item.title|truncatechars:30 }}</h1>
                         <div class="shop-item__price">{{ item.price }} сом</div>
                     </div>
                     <!-- end shop item content -->
@@ -30,6 +30,7 @@
             {% endfor %}
 
         </div>
+    </div>
         <form action="{% url 'send_message' %}" method="post" class="contacts-form">
             <h1 class="contacts-form__title">Заполните форму заявку для покупки</h1>
 
@@ -39,7 +40,7 @@
             {#            <textarea placeholder="Message..."></textarea>#}
             <button type="submit" class="btn">Отправить<i class="form-btn-arrow"></i></button>
         </form>
-    </div>
+
 
 {% endblock %}
 

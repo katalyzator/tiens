@@ -1,19 +1,13 @@
 <div class="shop-item shop-item_big shop-item_ins cf">
+
     <div class="shop-item__thumb">
         <img src="{{ product.image.url }}" alt="">
-
     </div>
-    <div class="shop-item__content">
-        <h1 class="shop-item__title">{{ product.title }}</h1>
+     <div class="shop-item__content">
 
-        <p>{{ product.description|truncatewords:20 }}</p>
-
-        <div class="shop-item__price">{{ product.price }} сом<span></span></div>
+        <div class="shop-item__price" style="font-size: 30px !important;">{{ product.price }} сом<span></span></div>
     </div>
-    <!-- end shop item content -->
-
-
-    <!-- end shop item thumb -->
+    <br>
 
     <div class="shop-item__details">
         {#        <div class="amount">#}
@@ -27,8 +21,22 @@
            style="font-size: 16px !important; height: auto; width: 200px; text-align: center;"><i
                 class="buy-btn__icon"></i>Добавить в корзину</a>
     </div>
-    <!-- end shop item detailed col -->
+
 </div>
+    <div class="shop-item__content">
+        <h1 class="shop-item__title">{{ product.title }}</h1>
+
+        <p>{{ product.description }}</p>
+
+{#        <div class="shop-item__price">{{ product.price }} сом<span></span></div>#}
+    </div>
+    <!-- end shop item content -->
+
+
+    <!-- end shop item thumb -->
+
+    <!-- end shop item detailed col -->
+
 <!-- end shop item big -->
 
 <script>

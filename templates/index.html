@@ -116,28 +116,30 @@
 
             <ul class="slider">
                 {% for item in products %}
-                    <a href="{% url 'ajax_product' id=item.id %}" class="ajax_link_product">
-                        <li class="slider__item">
-                            <div class="shop-item">
+
+                    <li class="slider__item">
+                        <div class="shop-item">
+                            <a href="{% url 'ajax_product' id=item.id %}" class="ajax_link_product">
                                 <div class="shop-item__thumb">
                                     <img src="{{ item.image.url }}" alt="">
                                 </div>
-                                <!-- end shop item thumb -->
+                            </a>
+                            <!-- end shop item thumb -->
 
-                                <div class="shop-item__content">
-                                    <h1 class="shop-item__title"
-                                        style="font-size: 14px">{{ item.title|truncatechars:20 }}</h1>
-                                    <div class="shop-item__price">{{ item.price }} сом</div>
-                                </div>
-                                <!-- end shop item content -->
-
-                                <a href="{% url 'ajax_product' id=item.id %}" class="buy-btn ajax_link_product"
-                                   style="font-size: 16px; height: auto;"><i
-                                        class="buy-btn__icon"></i>Посмотреть</a>
+                            <div class="shop-item__content">
+                                <h1 class="shop-item__title"
+                                    style="font-size: 14px">{{ item.title|truncatechars:20 }}</h1>
+                                <div class="shop-item__price">{{ item.price }} сом</div>
                             </div>
-                            <!-- end shop item -->
-                        </li>
-                    </a>
+                            <!-- end shop item content -->
+
+                            <a href="{% url 'ajax_product' id=item.id %}" class="buy-btn ajax_link_product"
+                               style="font-size: 16px;"><i
+                                    class="buy-btn__icon"></i>Посмотреть</a>
+                        </div>
+                        <!-- end shop item -->
+                    </li>
+
                     <!-- end slider item -->
                 {% endfor %}
 
@@ -169,7 +171,7 @@
                         <!-- end shop item content -->
 
                         <a href="{% url 'ajax_product' id=item.id %}" class="buy-btn ajax_link_product"
-                           id="ajax_cart_add" style="font-size: 16px; height: auto;"><i
+                           id="ajax_cart_add" style="font-size: 16px;"><i
                                 class="buy-btn__icon"></i>Посмотреть</a>
                     </div>
                     <!-- end shop item -->
