@@ -2394,7 +2394,7 @@ table tbody tr td:first-child {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
-    font: 4.15384615em 'Fredoka One', cursive;
+    font: 2.15384615em 'Fredoka One', cursive;
     color: #ffea00;
     text-shadow: 8px 8px 0 rgba(0, 0, 0, 0.07);
 }

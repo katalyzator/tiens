@@ -10,7 +10,7 @@
             {% for item in sliders %}
                 <li class="main-slider__item main-slider__item_first-bg">
                     <div class="container">
-                        <h1 class="main-slider__title">{{ item.slogan }}</h1>
+                        <h1 class="main-slider__title" style="color: black;">{{ item.slogan }}</h1>
 
                         <article class="main-slider-post">
                             <div class="main-slider-post__container">
@@ -18,7 +18,7 @@
 
 
                                 <blockquote class="main-slider-post__quote">
-                                    <p>{{ item.description }}</p>
+                                    <p style="color: black;">{{ item.description }}</p>
                                 </blockquote>
                             </div>
                             <!-- end main slider post container -->
@@ -27,7 +27,7 @@
                                 <img src="{{ item.image.url }}" alt="#" width="432px" height="275px">
 
                                 <div class="wrap-price">
-                                    <div class="price">{{ item.price }}</div>
+                                    <div class="price">{{ item.price }} сом</div>
                                 </div>
                             </div>
                             <!-- end main slider post image -->
