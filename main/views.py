@@ -9,7 +9,7 @@ from django.template import Template
 from django.template import Context
 from django.views.decorators.csrf import csrf_exempt
 
-from main.models import Product
+from main.models import Product, Slider
 from tiens.settings import BASE_DIR
 
 
@@ -40,7 +40,9 @@ def ajax_product_detail(request, id):
 
 def index_view(request):
     products = Product.objects.filter(is_active=True)
-    context = {"products": products}
+    sliders = Slider.objects.all()
+
+    context = {"products": products, "sliders": sliders}
     template = 'index.html'
 
     return render(request, template, context)

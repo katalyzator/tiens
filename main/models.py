@@ -21,3 +21,17 @@ class Product(models.Model):
 
     def __unicode__(self):
         return smart_unicode(self.title)
+
+
+class Slider(models.Model):
+    title = models.CharField(max_length=500, verbose_name='Заголовок')
+    slogan = models.CharField(max_length=500, verbose_name='Слоган', help_text='Не более 100 символов')
+    description = models.TextField(verbose_name='Описание')
+    image = models.ImageField(upload_to='images/slider', verbose_name='Картинка', help_text='Размер 432x275')
+    price = models.CharField(max_length=255, verbose_name='Цена (если это товар)', blank=True, null=True)
+
+    timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
+    updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+
+    def __unicode__(self):
+        return smart_unicode(self.title)

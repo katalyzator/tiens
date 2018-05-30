@@ -7,37 +7,36 @@
     <div class="wrap-main-slider">
         <ul class="main-slider"
             style="background: url({% static 'css/images/green_diamond_patterns-wallpaper-1920x1080.jpg' %}) no-repeat center;">
+            {% for item in sliders %}
+                <li class="main-slider__item main-slider__item_first-bg">
+                    <div class="container">
+                        <h1 class="main-slider__title">{{ item.slogan }}</h1>
 
-            <li class="main-slider__item main-slider__item_first-bg">
-                <div class="container">
-                    <h1 class="main-slider__title">treat your family<br>with fresh and juicy fruits!</h1>
+                        <article class="main-slider-post">
+                            <div class="main-slider-post__container">
+                                <h1 class="main-slider-post__title">{{ item.title }}</h1>
 
-                    <article class="main-slider-post">
-                        <div class="main-slider-post__container">
-                            <h1 class="main-slider-post__title">Orange</h1>
 
-                            <p>In an ideal world this website wouldn't exist, a client would acknowledge the importance
-                                having web copy before the design starts.</p>
-
-                            <blockquote class="main-slider-post__quote">
-                                <p>Best treat when inviting friends or family!</p>
-                            </blockquote>
-                        </div>
-                        <!-- end main slider post container -->
-
-                        <div class="main-slider-post__image">
-                            <img src="http://placehold.it/432x375/333" alt="#">
-
-                            <div class="wrap-price">
-                                <div class="price">$58</div>
+                                <blockquote class="main-slider-post__quote">
+                                    <p>{{ item.description }}</p>
+                                </blockquote>
                             </div>
-                        </div>
-                        <!-- end main slider post image -->
-                    </article>
-                    <!-- main slider post -->
-                </div>
-                {#                <!-- end container -->#}
-            </li>
+                            <!-- end main slider post container -->
+
+                            <div class="main-slider-post__image">
+                                <img src="{{ item.image.url }}" alt="#" width="432px" height="275px">
+
+                                <div class="wrap-price">
+                                    <div class="price">{{ item.price }}</div>
+                                </div>
+                            </div>
+                            <!-- end main slider post image -->
+                        </article>
+                        <!-- main slider post -->
+                    </div>
+                    {#                <!-- end container -->#}
+                </li>
+            {% endfor %}
             <!-- end main slider item -->
         </ul>
         <!-- end main slider -->
