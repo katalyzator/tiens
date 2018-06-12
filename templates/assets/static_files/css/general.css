@@ -122,7 +122,7 @@
 /* end font family variables */
 body {
     font-size: 13px;
-    font-family: 'Fredoka One', cursive !important;
+    font-family: 'Raleway', sans-serif;
     color: #686868;
     line-height: 1;
     background: #fff9e7 url(images/bg/orangeBg.png) no-repeat bottom right;
@@ -2423,7 +2423,7 @@ table tbody tr td:first-child {
 }
 
 .main-slider-post__quote p {
-    font: 1.56923077em 'Fredoka One', cursive;
+    font: italic 1.56923077em 'SansSerif' !important;
     color: #fff;
 }
 
