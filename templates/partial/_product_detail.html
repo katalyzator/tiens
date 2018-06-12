@@ -43,6 +43,8 @@
 
 <!-- end shop item big -->
 
+
+
 <script>
     $('#add_to_card').on('click', function (e) {
         e.preventDefault();
@@ -64,6 +66,10 @@
                 {#input_form.className = "form-button"; // set the CSS class#}
                 {#var block = document.getElementById('matrix_id');#}
                 {#block.append(finput_form);#}
+                $('#exampleModalCenter').modal('toggle');
+                $('.alert-success').html('<p> Added </p>');
+                $('.alert-success').fadeIn();
+
             },
             error: function () {
                 console.error('Error to send requet!');
