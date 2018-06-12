@@ -122,7 +122,7 @@
 /* end font family variables */
 body {
     font-size: 13px;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Fredoka One', cursive !important;
     color: #686868;
     line-height: 1;
     background: #fff9e7 url(images/bg/orangeBg.png) no-repeat bottom right;
@@ -2350,7 +2350,7 @@ table tbody tr td:first-child {
 }
 
 .main-slider__title {
-    font: 5.23076923em 'Fredoka One', cursive;
+    font: 3.23076923em 'Fredoka One', cursive !important;
     color: #fff;
     text-align: center;
     text-transform: lowercase;
@@ -2423,7 +2423,7 @@ table tbody tr td:first-child {
 }
 
 .main-slider-post__quote p {
-    font: italic 1.76923077em 'PT Serif', serif;
+    font: 1.16923077em 'Fredoka One', cursive;
     color: #fff;
 }
 
