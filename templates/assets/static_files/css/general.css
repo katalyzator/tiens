@@ -2353,7 +2353,6 @@ table tbody tr td:first-child {
     font: 3.23076923em 'Fredoka One', cursive !important;
     color: #fff;
     text-align: center;
-    text-transform: lowercase;
     margin-bottom: 1.45833333333%;
     padding-top: 10%;
     text-shadow: 12px 12px 0 rgba(0, 0, 0, 0.1);
@@ -2416,7 +2415,7 @@ table tbody tr td:first-child {
 }
 
 .main-slider-post__title {
-    font: 1.84615385em 'Fredoka One', cursive;
+    font: 1.84615385em 'SansSerif';
     color: #ffea00;
 
     margin-bottom: 6.32911392405%;
